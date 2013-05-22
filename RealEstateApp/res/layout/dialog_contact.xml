@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:padding="5dp">
+    
+    <EditText 
+        android:id="@+id/contact_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name"
+        android:drawableRight="@drawable/ic_action_person"
+        android:singleLine="true"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="italic"
+        android:imeOptions="actionNext"/>
+    
+    <EditText 
+        android:id="@+id/contact_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/mail"
+        android:drawableRight="@drawable/ic_action_mail"
+        android:singleLine="true"
+        android:inputType="textEmailAddress"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="italic"
+        android:imeOptions="actionNext"/>
+    
+    <EditText 
+        android:id="@+id/contact_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/address"
+        android:drawableRight="@drawable/ic_action_address"
+        android:singleLine="true"
+        android:inputType="textPostalAddress"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="italic"
+        android:imeOptions="actionNext"
+        android:visibility="gone"/>
+    
+    <EditText 
+        android:id="@+id/contact_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone"
+        android:drawableRight="@drawable/ic_action_phone"
+        android:singleLine="true"
+        android:inputType="phone"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="italic"
+        android:imeOptions="actionDone"/>
+
+</LinearLayout>
