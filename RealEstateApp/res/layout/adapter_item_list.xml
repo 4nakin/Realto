@@ -2,23 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:gravity="right"
     android:orientation="vertical" >
 
     <TextView
         android:id="@+id/list_price_text"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="right"
+        android:layout_marginTop="3dp"
+        android:background="@android:color/holo_red_dark"
+        android:fontFamily="sans-serif-condensed"
         android:padding="3dp"
         android:singleLine="true"
-        android:textColor="#800099CC"
-        android:textSize="12sp"
-        android:textStyle="bold" />
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/list_header_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:singleLine="true"
@@ -29,9 +32,10 @@
         android:id="@+id/list_sub_header_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:paddingBottom="5dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:paddingBottom="5dp"
         android:singleLine="true"
         android:textColor="#FF838383"
         android:textSize="12sp" />

@@ -2,4 +2,6 @@
 <resources>
     <dimen name="table_login_widget_width">400dp</dimen>
     <dimen name="gallery_image_height">240dp</dimen>
+    <dimen name="upload_gallery_image_size">64dp</dimen>
+    <dimen name="upload_gallery_image_margin">5dp</dimen>
 </resources>

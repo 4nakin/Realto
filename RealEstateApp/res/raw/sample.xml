@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+    <property-info>
+        <id>5465465</id>
+        <title>3BHK and 2 Bath - Individual row house</title>
+        <address>210, South Blvd, Amin Drive, Dallas, Texas - 67785</address>
+        <price>400,000</price>
+        <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+        <contact>dummy@dummydomain.com</contact>
+        <images-url>
+            <image>http://findghar.com/blog/wp-content/uploads/2011/10/bangalore_apartments-houses-in-bangalore-flats-in-bangalore.jpg</image>
+            <image>http://cachefly.apartmentsapart.com/images/apartment_940_xbig.jpg</image>
+        </images-url>
+        <rooms-details>
+            <room>3 Bedrooms</room>
+            <room>2 Bathrooms</room>
+            <room>1 Kitchen</room>
+            <room>1 Hall</room>
+        </rooms-details>
+    </property-info>
+    
+    <property-info>
+        <id>6546</id>
+        <title>2BHK and 1 Bath - Individual row house</title>
+        <address>210, South Blvd, Amin Drive, Dallas, Texas - 67785</address>
+        <price>200,000</price>
+        <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+        <contact>dummy@dummydomain.com</contact>
+        <images-url>
+            <image>http://findghar.com/blog/wp-content/uploads/2011/10/bangalore_apartments-houses-in-bangalore-flats-in-bangalore.jpg</image>
+            <image>http://cachefly.apartmentsapart.com/images/apartment_940_xbig.jpg</image>
+        </images-url>
+        <rooms-details>
+            <room>2 Bedrooms</room>
+            <room>1 Bathrooms</room>
+            <room>1 Kitchen</room>
+            <room>1 Hall</room>
+        </rooms-details>
+    </property-info>
+</response>

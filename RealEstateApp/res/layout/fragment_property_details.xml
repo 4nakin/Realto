@@ -4,12 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.example.realestateapp.widgets.TouchHighlightImageButton
+    <com.touchmenotapps.realto.widgets.TouchHighlightImageButton
         android:id="@+id/property_details_header_image"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/apartment" />
+        android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/property_details_title_text"
@@ -17,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/property_details_header_image"
         android:background="#88000000"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:padding="3dp"
         android:textColor="@android:color/white"
@@ -43,15 +43,17 @@
                 android:id="@+id/property_details_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
                 android:gravity="center_horizontal"
                 android:singleLine="true"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:textStyle="bold|italic" />
+                android:textSize="18sp" 
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
                 android:gravity="center_horizontal"
                 android:singleLine="true"
                 android:text="@string/price"
@@ -68,6 +70,7 @@
             android:layout_weight="1"
             android:background="@drawable/selector_transparent_blue"
             android:drawableTop="@drawable/ic_action_contact"
+            android:fontFamily="sans-serif-light"
             android:text="@string/interested"
             android:textColor="#FFCCCCCC"
             android:textSize="14sp"
@@ -94,6 +97,7 @@
                 android:layout_columnSpan="2"
                 android:background="@drawable/selector_transparent_blue"
                 android:drawableLeft="@drawable/ic_action_map"
+                android:fontFamily="sans-serif-light"
                 android:padding="5dp"
                 android:textColor="#FF838383"
                 android:textSize="16sp"
@@ -107,38 +111,42 @@
                 android:textSize="12sp" />
 
             <TextView
+                android:id="@+id/property_detials_bedroom_count"
                 android:layout_columnSpan="1"
                 android:drawableLeft="@drawable/ic_action_house"
-                android:gravity="center_vertical"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_vertical|right"
                 android:singleLine="true"
-                android:text="3 Bedrooms"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/property_detials_bathroom_count"
                 android:layout_columnSpan="1"
                 android:drawableLeft="@drawable/ic_action_house"
-                android:gravity="center_vertical"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_vertical|right"
                 android:singleLine="true"
-                android:text="2 Bathrooms"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/property_detials_hall_count"
                 android:layout_columnSpan="1"
                 android:drawableLeft="@drawable/ic_action_house"
-                android:gravity="center_vertical"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_vertical|right"
                 android:singleLine="true"
-                android:text="1 Hall"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/property_detials_kitchen_count"
                 android:layout_columnSpan="1"
                 android:drawableLeft="@drawable/ic_action_house"
-                android:gravity="center_vertical"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_vertical|right"
                 android:singleLine="true"
-                android:text="1 Kitchen"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textStyle="bold" />
         </GridLayout>

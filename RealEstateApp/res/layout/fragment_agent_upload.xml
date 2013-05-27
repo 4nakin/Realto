@@ -21,22 +21,23 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/holo_blue_light"
                 android:drawableLeft="@drawable/ic_action_house"
+                android:fontFamily="sans-serif-condensed"
                 android:gravity="center_vertical"
                 android:hint="@string/title"
                 android:imeOptions="actionNext"
                 android:padding="5dp"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/upload_select_place_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
                 android:background="@drawable/selector_transparent_blue"
                 android:drawableLeft="@drawable/ic_action_map"
+                android:fontFamily="sans-serif-light"
                 android:gravity="center_vertical"
+                android:padding="5dp"
                 android:text="@string/select_location"
                 android:textColor="#FF838383"
                 android:textSize="16sp"
@@ -46,12 +47,13 @@
                 android:id="@+id/upload_enter_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
                 android:background="@android:color/transparent"
                 android:drawableLeft="@drawable/ic_action_coins"
+                android:fontFamily="sans-serif-light"
                 android:hint="@string/price"
                 android:imeOptions="actionNext"
                 android:inputType="number"
+                android:padding="5dp"
                 android:singleLine="true"
                 android:textColor="#FF838383"
                 android:textSize="16sp"
@@ -61,47 +63,110 @@
                 android:id="@+id/upload_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
                 android:background="@android:color/transparent"
                 android:drawableLeft="@drawable/ic_action_description"
+                android:fontFamily="sans-serif-light"
                 android:hint="@string/description"
                 android:imeOptions="actionDone"
                 android:lines="4"
+                android:padding="5dp"
                 android:textColor="#FF838383"
                 android:textSize="16sp"
                 android:textStyle="italic" />
-            
-            <TextView 
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#80000000"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="5dp"
                 android:text="@string/images"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:padding="5dp"
-                android:background="#80000000"/>
+                android:textStyle="bold" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="3dp"
-                android:overScrollMode="never" 
-                android:background="#80000000">
+                android:background="#80000000"
+                android:overScrollMode="never"
+                android:padding="3dp" >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
 
                     <Button
                         android:id="@+id/upload_add_image_btn"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:layout_margin="5dp"
+                        android:layout_width="@dimen/upload_gallery_image_size"
+                        android:layout_height="@dimen/upload_gallery_image_size"
+                        android:layout_margin="@dimen/upload_gallery_image_margin"
                         android:background="@drawable/selector_offline_read_button"
                         android:gravity="center"
                         android:text="@string/add_image"
                         android:textColor="#FF838383"
                         android:textSize="24sp"
                         android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/upload_image_1"
+                        android:layout_width="@dimen/upload_gallery_image_size"
+                        android:layout_height="@dimen/upload_gallery_image_size"
+                        android:layout_margin="@dimen/upload_gallery_image_margin"
+                        android:background="@drawable/shape_offline_read_pressed"
+                        android:cropToPadding="true"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop" 
+                        android:visibility="gone"
+                        android:contentDescription="@string/gallery_image"/>
+                    
+                    <ImageView
+                        android:id="@+id/upload_image_2"
+                        android:layout_width="@dimen/upload_gallery_image_size"
+                        android:layout_height="@dimen/upload_gallery_image_size"
+                        android:layout_margin="@dimen/upload_gallery_image_margin"
+                        android:background="@drawable/shape_offline_read_pressed"
+                        android:cropToPadding="true"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop" 
+                        android:visibility="gone"
+                        android:contentDescription="@string/gallery_image"/>
+                    
+                    <ImageView
+                        android:id="@+id/upload_image_3"
+                        android:layout_width="@dimen/upload_gallery_image_size"
+                        android:layout_height="@dimen/upload_gallery_image_size"
+                        android:layout_margin="@dimen/upload_gallery_image_margin"
+                        android:background="@drawable/shape_offline_read_pressed"
+                        android:cropToPadding="true"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop" 
+                        android:visibility="gone"
+                        android:contentDescription="@string/gallery_image"/>
+                    
+                    <ImageView
+                        android:id="@+id/upload_image_4"
+                        android:layout_width="@dimen/upload_gallery_image_size"
+                        android:layout_height="@dimen/upload_gallery_image_size"
+                        android:layout_margin="@dimen/upload_gallery_image_margin"
+                        android:background="@drawable/shape_offline_read_pressed"
+                        android:cropToPadding="true"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop" 
+                        android:visibility="gone"
+                        android:contentDescription="@string/gallery_image"/>
+                    
+                    <ImageView
+                        android:id="@+id/upload_image_5"
+                        android:layout_width="@dimen/upload_gallery_image_size"
+                        android:layout_height="@dimen/upload_gallery_image_size"
+                        android:layout_margin="@dimen/upload_gallery_image_margin"
+                        android:background="@drawable/shape_offline_read_pressed"
+                        android:cropToPadding="true"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop" 
+                        android:visibility="gone"
+                        android:contentDescription="@string/gallery_image"/>
                 </LinearLayout>
             </HorizontalScrollView>
         </LinearLayout>
@@ -109,9 +174,9 @@
 
     <LinearLayout
         android:id="@+id/upload_footer_layout"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
 
         <Button
@@ -121,6 +186,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/selector_login_button"
+            android:fontFamily="sans-serif-condensed"
             android:text="@string/upload"
             android:textColor="@android:color/white" />
 
@@ -131,6 +197,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/selector_offline_read_button"
+            android:fontFamily="sans-serif-condensed"
             android:text="@string/discard"
             android:textColor="#FF838383" />
     </LinearLayout>

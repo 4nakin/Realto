@@ -7,7 +7,7 @@
     
     <fragment 
         android:tag="property_list_fragment"
-        android:name="com.example.realestateapp.DataListFragment"
+        android:name="com.touchmenotapps.realto.fragments.DataListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2"/>

@@ -12,6 +12,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:drawableRight="@drawable/ic_action_person"
+        android:fontFamily="sans-serif-condensed"
         android:hint="@string/username"
         android:imeOptions="actionNext"
         android:inputType="textNoSuggestions"
@@ -24,18 +25,32 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:drawableRight="@drawable/ic_action_password"
+        android:fontFamily="sans-serif-condensed"
         android:hint="@string/password"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:singleLine="true" />
 
-    <Button
-        android:id="@+id/agent_login_procced_btn"
+    <LinearLayout
         android:layout_width="@dimen/table_login_widget_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/selector_login_button"
-        android:text="@string/login"
-        android:textColor="@android:color/white" />
+        android:orientation="horizontal" >
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/agent_login_procced_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_login_button"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/login"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
 
 </LinearLayout>
