@@ -40,15 +40,16 @@ public final class R {
         public static final int ic_action_phone=0x7f02000b;
         public static final int ic_broken_file=0x7f02000c;
         public static final int ic_launcher=0x7f02000d;
-        public static final int selector_login_button=0x7f02000e;
-        public static final int selector_offline_read_button=0x7f02000f;
-        public static final int selector_transparent_blue=0x7f020010;
-        public static final int shape_login_button_normal=0x7f020011;
-        public static final int shape_login_button_selected=0x7f020012;
-        public static final int shape_offline_read_normal=0x7f020013;
-        public static final int shape_offline_read_pressed=0x7f020014;
-        public static final int shape_transparent=0x7f020015;
-        public static final int shape_transparent_blue=0x7f020016;
+        public static final int logo=0x7f02000e;
+        public static final int selector_login_button=0x7f02000f;
+        public static final int selector_offline_read_button=0x7f020010;
+        public static final int selector_transparent_blue=0x7f020011;
+        public static final int shape_login_button_normal=0x7f020012;
+        public static final int shape_login_button_selected=0x7f020013;
+        public static final int shape_offline_read_normal=0x7f020014;
+        public static final int shape_offline_read_pressed=0x7f020015;
+        public static final int shape_transparent=0x7f020016;
+        public static final int shape_transparent_blue=0x7f020017;
     }
     public static final class id {
         public static final int agent_fragment_container=0x7f0c0000;
