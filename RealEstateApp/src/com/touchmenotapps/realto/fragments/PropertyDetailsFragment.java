@@ -137,12 +137,11 @@ public class PropertyDetailsFragment extends Fragment{
     	    }
         }
 
-        @SuppressWarnings("deprecation")
 		protected void onPostExecute(Drawable drawable) {
         	if(drawable != null) 
-        		mImageButton.setBackgroundDrawable(drawable);
+        		mImageButton.setImageDrawable(drawable);
         	else
-        		mImageButton.setBackgroundResource(R.drawable.ic_broken_file);
+        		mImageButton.setImageResource(R.drawable.ic_broken_file);
         }
      }
 }

@@ -47,12 +47,11 @@ public class ImageFragment extends Fragment {
     	    }
         }
 
-        @SuppressWarnings("deprecation")
 		protected void onPostExecute(Drawable drawable) {
         	if(drawable != null) 
-        		mImage.setBackgroundDrawable(drawable);
+        		mImage.setImageDrawable(drawable);
         	else
-        		mImage.setBackgroundResource(R.drawable.ic_broken_file);
+        		mImage.setImageResource(R.drawable.ic_broken_file);
         }
      }
 }
