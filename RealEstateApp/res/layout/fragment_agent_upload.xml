@@ -29,16 +29,17 @@
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/upload_select_place_btn"
+            <EditText
+                android:id="@+id/upload_enter_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_transparent_blue"
+                android:background="@null"
                 android:drawableLeft="@drawable/ic_action_map"
                 android:fontFamily="sans-serif-light"
-                android:gravity="center_vertical"
+                android:hint="@string/select_location"
+                android:imeOptions="actionNext"
+                android:inputType="textPostalAddress"
                 android:padding="5dp"
-                android:text="@string/select_location"
                 android:textColor="#FF838383"
                 android:textSize="16sp"
                 android:textStyle="italic" />
@@ -47,7 +48,7 @@
                 android:id="@+id/upload_enter_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
+                android:background="@null"
                 android:drawableLeft="@drawable/ic_action_coins"
                 android:fontFamily="sans-serif-light"
                 android:hint="@string/price"
@@ -63,7 +64,7 @@
                 android:id="@+id/upload_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
+                android:background="@null"
                 android:drawableLeft="@drawable/ic_action_description"
                 android:fontFamily="sans-serif-light"
                 android:hint="@string/description"
@@ -114,61 +115,111 @@
                         android:layout_height="@dimen/upload_gallery_image_size"
                         android:layout_margin="@dimen/upload_gallery_image_margin"
                         android:background="@drawable/shape_offline_read_pressed"
+                        android:contentDescription="@string/gallery_image"
                         android:cropToPadding="true"
                         android:padding="3dp"
-                        android:scaleType="centerCrop" 
-                        android:visibility="gone"
-                        android:contentDescription="@string/gallery_image"/>
-                    
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
                     <ImageView
                         android:id="@+id/upload_image_2"
                         android:layout_width="@dimen/upload_gallery_image_size"
                         android:layout_height="@dimen/upload_gallery_image_size"
                         android:layout_margin="@dimen/upload_gallery_image_margin"
                         android:background="@drawable/shape_offline_read_pressed"
+                        android:contentDescription="@string/gallery_image"
                         android:cropToPadding="true"
                         android:padding="3dp"
-                        android:scaleType="centerCrop" 
-                        android:visibility="gone"
-                        android:contentDescription="@string/gallery_image"/>
-                    
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
                     <ImageView
                         android:id="@+id/upload_image_3"
                         android:layout_width="@dimen/upload_gallery_image_size"
                         android:layout_height="@dimen/upload_gallery_image_size"
                         android:layout_margin="@dimen/upload_gallery_image_margin"
                         android:background="@drawable/shape_offline_read_pressed"
+                        android:contentDescription="@string/gallery_image"
                         android:cropToPadding="true"
                         android:padding="3dp"
-                        android:scaleType="centerCrop" 
-                        android:visibility="gone"
-                        android:contentDescription="@string/gallery_image"/>
-                    
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
                     <ImageView
                         android:id="@+id/upload_image_4"
                         android:layout_width="@dimen/upload_gallery_image_size"
                         android:layout_height="@dimen/upload_gallery_image_size"
                         android:layout_margin="@dimen/upload_gallery_image_margin"
                         android:background="@drawable/shape_offline_read_pressed"
+                        android:contentDescription="@string/gallery_image"
                         android:cropToPadding="true"
                         android:padding="3dp"
-                        android:scaleType="centerCrop" 
-                        android:visibility="gone"
-                        android:contentDescription="@string/gallery_image"/>
-                    
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
                     <ImageView
                         android:id="@+id/upload_image_5"
                         android:layout_width="@dimen/upload_gallery_image_size"
                         android:layout_height="@dimen/upload_gallery_image_size"
                         android:layout_margin="@dimen/upload_gallery_image_margin"
                         android:background="@drawable/shape_offline_read_pressed"
+                        android:contentDescription="@string/gallery_image"
                         android:cropToPadding="true"
                         android:padding="3dp"
-                        android:scaleType="centerCrop" 
-                        android:visibility="gone"
-                        android:contentDescription="@string/gallery_image"/>
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:divider="?android:dividerVertical"
+                android:dividerPadding="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:showDividers="middle" >
+
+                <Spinner
+                    android:id="@+id/upload_bedrooms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/bedroom_count" />
+
+                <Spinner
+                    android:id="@+id/upload_bathrooms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/bathroom_count" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:divider="?android:dividerVertical"
+                android:dividerPadding="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:showDividers="middle" >
+
+                <Spinner
+                    android:id="@+id/upload_hall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/hall_count" />
+
+                <Spinner
+                    android:id="@+id/upload_kitchen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/kitchen_count" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

@@ -52,12 +52,12 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/property_details_price_currency"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center_horizontal"
                 android:singleLine="true"
-                android:text="@string/price"
                 android:textColor="#FFCCCCCC"
                 android:textSize="18sp"
                 android:textStyle="italic" />
@@ -69,7 +69,7 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@drawable/selector_transparent_blue"
+            android:background="?android:selectableItemBackground"
             android:drawableTop="@drawable/ic_action_contact"
             android:fontFamily="sans-serif-light"
             android:text="@string/interested"
@@ -96,7 +96,7 @@
             <TextView
                 android:id="@+id/property_details_address"
                 android:layout_columnSpan="2"
-                android:background="@drawable/selector_transparent_blue"
+                android:background="?android:selectableItemBackground"
                 android:drawableLeft="@drawable/ic_action_map"
                 android:fontFamily="sans-serif-light"
                 android:padding="5dp"

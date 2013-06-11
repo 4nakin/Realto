@@ -2,7 +2,8 @@ package com.touchmenotapps.realto.model;
 
 public class PropertyDetailsObject {
 
-	private int mPropertyID;
+	private String mPropertyID;
+	private String mCurrency;
 	private String mPropertyTitle;
 	private String mPropertyAddress;
 	private String mPropertyPrice;
@@ -14,14 +15,14 @@ public class PropertyDetailsObject {
 	/**
 	 * @return the mPropertyID
 	 */
-	public int getPropertyID() {
+	public String getPropertyID() {
 		return mPropertyID;
 	}
 
 	/**
 	 * @param mPropertyID the mPropertyID to set
 	 */
-	public void setPropertyID(int mPropertyID) {
+	public void setPropertyID(String mPropertyID) {
 		this.mPropertyID = mPropertyID;
 	}
 
@@ -121,5 +122,19 @@ public class PropertyDetailsObject {
 	 */
 	public void setPropertyUploaderMail(String mPropertyUploaderMail) {
 		this.mPropertyUploaderMail = mPropertyUploaderMail;
+	}
+
+	/**
+	 * @return the mCurrency
+	 */
+	public String getCurrency() {
+		return mCurrency;
+	}
+
+	/**
+	 * @param mCurrency the mCurrency to set
+	 */
+	public void setCurrency(String mCurrency) {
+		this.mCurrency = mCurrency;
 	}
 }

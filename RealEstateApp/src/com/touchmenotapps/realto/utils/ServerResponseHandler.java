@@ -10,6 +10,8 @@ import com.touchmenotapps.realto.model.PropertyDetailsObject;
 
 public class ServerResponseHandler extends DefaultHandler {
 
+	private final String ATTR_CURRENCY = "currency";
+	private final String TAG_RESPONSE = "response";
 	private final String TAG_PROPERTY_INFO = "property-info";
 	private final String TAG_ID = "id";
 	private final String TAG_TITLE = "title";
@@ -17,8 +19,12 @@ public class ServerResponseHandler extends DefaultHandler {
 	private final String TAG_PRICE = "price";
 	private final String TAG_DESCRIPTION = "description";
 	private final String TAG_CONTACT = "contact";
+	private final String TAG_IMAGES = "images";
+	private final String TAG_IMAGE = "image";
+	private final String TAG_ROOMS = "rooms";
+	private final String TAG_ROOM = "room";
 	
-	String elementValue = null;
+	String elementValue = null, mCurrency = null;
 	Boolean elementOn = false;
 	private PropertyDetailsObject mData;
 	private ArrayList<String> mImageURLS = new ArrayList<String>();
@@ -37,11 +43,14 @@ public class ServerResponseHandler extends DefaultHandler {
 	public void startElement(String uri, String localName, String qName,
 			Attributes attributes) throws SAXException {
 		elementOn = true;
-		if(localName.equals(TAG_PROPERTY_INFO))
+		if(localName.equals(TAG_RESPONSE)) 
+			mCurrency = attributes.getValue(ATTR_CURRENCY);
+		else if(localName.equals(TAG_PROPERTY_INFO)) {
 			mData = new PropertyDetailsObject();
-		else if(localName.equals("images-url"))
+			mData.setCurrency(mCurrency);
+		} else if(localName.equals(TAG_IMAGES))
 			mImageURLS.clear();
-		else if(localName.equals("rooms-details"))
+		else if(localName.equals(TAG_ROOMS))
 			mRoomDetails.clear();
 	}
 	
@@ -50,7 +59,7 @@ public class ServerResponseHandler extends DefaultHandler {
 			throws SAXException {
 		elementOn = false;
 		if(localName.equals(TAG_ID))
-			mData.setPropertyID(Integer.parseInt(elementValue));
+			mData.setPropertyID(elementValue);
 		else if(localName.equals(TAG_TITLE))
 			mData.setPropertyTitle(elementValue);
 		else if(localName.equals(TAG_ADDRESS))
@@ -61,13 +70,13 @@ public class ServerResponseHandler extends DefaultHandler {
 			mData.setPropertyDescription(elementValue);
 		else if(localName.equals(TAG_CONTACT))
 			mData.setPropertyUploaderMail(elementValue);
-		else if(localName.equals("image"))
+		else if(localName.equals(TAG_IMAGE))
 			mImageURLS.add(elementValue);
-		else if(localName.equals("images-url"))
+		else if(localName.equals(TAG_IMAGES))
 			mData.setPropertyImagesURL(mImageURLS.toArray(new String[mImageURLS.size()]));
-		else if(localName.equals("room"))
+		else if(localName.equals(TAG_ROOM))
 			mRoomDetails.add(elementValue);
-		else if(localName.equals("rooms-details"))
+		else if(localName.equals(TAG_ROOMS))
 			mData.setPropertyRoomCount(mRoomDetails.toArray(new String[mRoomDetails.size()]));
 		else if(localName.equals(TAG_PROPERTY_INFO))
 			mDataList.add(mData);

@@ -31,8 +31,8 @@ public class AgentUploadFragment extends Fragment {
 	
 	private int imageCount = 0;
 	private View mViewHolder;
-	private EditText mPropertyName, mPropertyPrice, mPropertyDescription;
-	private Button mSelectLocationBtn, mAddImageBtn, mUploadBtn, mDiscardBtn;
+	private EditText mPropertyName, mPropertyPrice, mPropertyDescription, mPropertyLocation;
+	private Button mAddImageBtn;
 	private ImageView[] mGalleryImages = new ImageView[5];
 	private NetworkUtil mNetworkUtil;
 
@@ -44,17 +44,15 @@ public class AgentUploadFragment extends Fragment {
 		mPropertyName = (EditText) mViewHolder.findViewById(R.id.upload_property_name);
 		mPropertyPrice = (EditText) mViewHolder.findViewById(R.id.upload_enter_price);
 		mPropertyDescription = (EditText) mViewHolder.findViewById(R.id.upload_description);
-		mSelectLocationBtn = (Button) mViewHolder.findViewById(R.id.upload_select_place_btn);
+		mPropertyLocation = (EditText) mViewHolder.findViewById(R.id.upload_enter_address);
 		mAddImageBtn = (Button) mViewHolder.findViewById(R.id.upload_add_image_btn);
-		mUploadBtn = (Button) mViewHolder.findViewById(R.id.upload_start_btn);
-		mDiscardBtn = (Button) mViewHolder.findViewById(R.id.upload_discard_btn);
 		mGalleryImages[0] = (ImageView) mViewHolder.findViewById(R.id.upload_image_1);
 		mGalleryImages[1] = (ImageView) mViewHolder.findViewById(R.id.upload_image_2);
 		mGalleryImages[2] = (ImageView) mViewHolder.findViewById(R.id.upload_image_3);
 		mGalleryImages[3] = (ImageView) mViewHolder.findViewById(R.id.upload_image_4);
 		mGalleryImages[4] = (ImageView) mViewHolder.findViewById(R.id.upload_image_5);
 		
-		mDiscardBtn.setOnClickListener(new OnClickListener() {
+		mViewHolder.findViewById(R.id.upload_discard_btn).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				clearEntry();
@@ -68,14 +66,7 @@ public class AgentUploadFragment extends Fragment {
 			}
 		});
 
-		mSelectLocationBtn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-
-			}
-		});
-
-		mUploadBtn.setOnClickListener(new OnClickListener() {
+		mViewHolder.findViewById(R.id.upload_start_btn).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				if(mNetworkUtil.isNetworkAvailable(getActivity())) {
@@ -103,7 +94,7 @@ public class AgentUploadFragment extends Fragment {
 				mPropertyName.getEditableText().clear();
 				mPropertyPrice.getEditableText().clear();
 				mPropertyDescription.getEditableText().clear();
-				mSelectLocationBtn.setText(R.string.select_location);
+				mPropertyLocation.getEditableText().clear();
 				mAddImageBtn.setVisibility(View.VISIBLE);
 				for(int i = 0; i < 5; i++) 
 					mGalleryImages[i].setVisibility(View.GONE);

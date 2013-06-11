@@ -52,7 +52,7 @@ public class ItemListAdapter extends BaseAdapter {
 			mPrice = (TextView) convertView.findViewById(R.id.list_price_text);
 			mTitle.setText(mData.get(position).getPropertyTitle());
 			mAddress.setText(mData.get(position).getPropertyAddress());
-			mPrice.setText(mData.get(position).getPropertyPrice() + " USD");
+			mPrice.setText(mData.get(position).getPropertyPrice() + " " + mData.get(position).getCurrency());
 		} 
 		return convertView;
 	}

@@ -20,69 +20,67 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 @SuppressLint("ValidFragment")
 public class PropertyDetailsFragment extends Fragment{
+	
+	public static final String TAG_ID = "id";
+	public static final String TAG_TITLE = "title";
+	public static final String TAG_ADDRESS = "address";
+	public static final String TAG_PRICE = "price";
+	public static final String TAG_CURRENCY = "currency";
+	public static final String TAG_DESCRIPTION = "description";
+	public static final String TAG_CONTACT = "contact";
+	public static final String TAG_IMAGES = "images";
+	public static final String TAG_ROOMS = "rooms";
 
 	private View mViewHolder;
-	private Button mInterestedButton;
 	private ImageButton mImageButton;
-	private TextView mTitle, mAddress, mDescription, mPrice, mBedroom, mBathroom, mKitchen, mHall;
 	private SendContactInfoUtil mContactUtil;
 	private PropertyDetailsObject mPropertyDetails;
 	private NetworkUtil mNetworkUtil;
 	
-	public PropertyDetailsFragment() {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 		mPropertyDetails = new PropertyDetailsObject();
+		if(getArguments().containsKey(TAG_ADDRESS))
+			mPropertyDetails.setPropertyAddress(getArguments().getString(TAG_ADDRESS));
+		if(getArguments().containsKey(TAG_CONTACT))
+			mPropertyDetails.setPropertyUploaderMail(getArguments().getString(TAG_CONTACT));
+		if(getArguments().containsKey(TAG_CURRENCY))
+			mPropertyDetails.setCurrency(getArguments().getString(TAG_CURRENCY));
+		if(getArguments().containsKey(TAG_DESCRIPTION))
+			mPropertyDetails.setPropertyDescription(getArguments().getString(TAG_DESCRIPTION));
+		if(getArguments().containsKey(TAG_ID))
+			mPropertyDetails.setPropertyID(getArguments().getString(TAG_ID));
+		if(getArguments().containsKey(TAG_IMAGES))
+			mPropertyDetails.setPropertyImagesURL(getArguments().getStringArray(TAG_IMAGES));
+		if(getArguments().containsKey(TAG_PRICE))
+			mPropertyDetails.setPropertyPrice(getArguments().getString(TAG_PRICE));
+		if(getArguments().containsKey(TAG_ROOMS))
+			mPropertyDetails.setPropertyRoomCount(getArguments().getStringArray(TAG_ROOMS));
+		if(getArguments().containsKey(TAG_TITLE))
+			mPropertyDetails.setPropertyTitle(getArguments().getString(TAG_TITLE));
 	}
-	
-	public PropertyDetailsFragment(PropertyDetailsObject data) {
-		mPropertyDetails = data;
-	}
-	
+			
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		mContactUtil = new SendContactInfoUtil(getActivity());
 		mNetworkUtil = new NetworkUtil();
 		mViewHolder = inflater.inflate(R.layout.fragment_property_details, null);
-		mInterestedButton = (Button) mViewHolder.findViewById(R.id.property_details_interested_btn);
 		mImageButton = (ImageButton) mViewHolder.findViewById(R.id.property_details_header_image);
-		mTitle = (TextView) mViewHolder.findViewById(R.id.property_details_title_text);
-		mAddress = (TextView) mViewHolder.findViewById(R.id.property_details_address);
-		mDescription = (TextView) mViewHolder.findViewById(R.id.property_details_description);
-		mPrice = (TextView) mViewHolder.findViewById(R.id.property_details_price);
-		mBedroom = (TextView) mViewHolder.findViewById(R.id.property_detials_bedroom_count);
-		mBathroom = (TextView) mViewHolder.findViewById(R.id.property_detials_bathroom_count);
-		mKitchen = (TextView) mViewHolder.findViewById(R.id.property_detials_kitchen_count);
-		mHall = (TextView) mViewHolder.findViewById(R.id.property_detials_hall_count);
-		
-		mTitle.setText(mPropertyDetails.getPropertyTitle());
-		mAddress.setText(mPropertyDetails.getPropertyAddress());
-		mDescription.setText(mPropertyDetails.getPropertyDescription());
-		mPrice.setText(mPropertyDetails.getPropertyPrice());
-		if(mPropertyDetails.getPropertyRoomCount() != null) {
-			mBedroom.setText(mPropertyDetails.getPropertyRoomCount()[0]);
-			mBathroom.setText(mPropertyDetails.getPropertyRoomCount()[1]);
-			mKitchen.setText(mPropertyDetails.getPropertyRoomCount()[2]);
-			mHall.setText(mPropertyDetails.getPropertyRoomCount()[3]);
-		}
-		if(mPropertyDetails.getPropertyImagesURL() != null && mPropertyDetails.getPropertyImagesURL().length > 0) {
-			if(mNetworkUtil.isNetworkAvailable(getActivity()))
-				new LoadImageFromWebOperations().execute(mPropertyDetails.getPropertyImagesURL()[0]);
-			else
-				mImageButton.setBackgroundResource(R.drawable.ic_broken_file);
-		}
-						
-		mAddress.setOnClickListener(new OnClickListener() {
+		initView();
+			
+		mViewHolder.findViewById(R.id.property_details_address).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				try {
-					String uri = "geo:0,0?q=" + mAddress.getText().toString();
+					String uri = "geo:0,0?q=" + mPropertyDetails.getPropertyAddress();
 					getActivity().startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
 				} catch (ActivityNotFoundException e) {
 					e.printStackTrace();
@@ -91,7 +89,7 @@ public class PropertyDetailsFragment extends Fragment{
 			}
 		});
 		
-		mInterestedButton.setOnClickListener(new OnClickListener() {
+		mViewHolder.findViewById(R.id.property_details_interested_btn).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				mContactUtil.getContactedDialog();
@@ -110,6 +108,37 @@ public class PropertyDetailsFragment extends Fragment{
 		return mViewHolder;
 	}
 	
+	private void initView() {
+		((TextView) mViewHolder.findViewById(R.id.property_details_title_text))
+		.setText(mPropertyDetails.getPropertyTitle());
+	((TextView) mViewHolder.findViewById(R.id.property_details_address))
+		.setText(mPropertyDetails.getPropertyAddress());
+	((TextView) mViewHolder.findViewById(R.id.property_details_description))
+		.setText(mPropertyDetails.getPropertyDescription());
+	((TextView) mViewHolder.findViewById(R.id.property_details_price))
+		.setText(mPropertyDetails.getPropertyPrice());
+	((TextView) mViewHolder.findViewById(R.id.property_details_price_currency))
+		.setText(getString(R.string.price) + " (" + mPropertyDetails.getCurrency() + ")");
+	
+	if(mPropertyDetails.getPropertyRoomCount() != null) {
+		((TextView) mViewHolder.findViewById(R.id.property_detials_bedroom_count))
+			.setText(mPropertyDetails.getPropertyRoomCount()[0]);
+		((TextView) mViewHolder.findViewById(R.id.property_detials_bathroom_count))
+			.setText(mPropertyDetails.getPropertyRoomCount()[1]);
+		((TextView) mViewHolder.findViewById(R.id.property_detials_kitchen_count))
+			.setText(mPropertyDetails.getPropertyRoomCount()[2]);
+		((TextView) mViewHolder.findViewById(R.id.property_detials_hall_count))
+			.setText(mPropertyDetails.getPropertyRoomCount()[3]);
+	}
+	
+	if(mPropertyDetails.getPropertyImagesURL() != null && mPropertyDetails.getPropertyImagesURL().length > 0) {
+		if(mNetworkUtil.isNetworkAvailable(getActivity()))
+			new LoadImageFromWebOperations().execute(mPropertyDetails.getPropertyImagesURL()[0]);
+		else
+			mImageButton.setBackgroundResource(R.drawable.ic_broken_file);
+	}
+	}
+		
 	@Override
 	public void onResume() {
 		super.onResume();

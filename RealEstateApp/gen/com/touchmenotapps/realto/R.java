@@ -15,7 +15,11 @@ public final class R {
         public static final int card_flip_right_out=0x7f040003;
     }
     public static final class array {
+        public static final int bathroom_count=0x7f090002;
+        public static final int bedroom_count=0x7f090001;
+        public static final int hall_count=0x7f090003;
         public static final int image_picker_options=0x7f090000;
+        public static final int kitchen_count=0x7f090004;
     }
     public static final class attr {
     }
@@ -43,13 +47,10 @@ public final class R {
         public static final int logo=0x7f02000e;
         public static final int selector_login_button=0x7f02000f;
         public static final int selector_offline_read_button=0x7f020010;
-        public static final int selector_transparent_blue=0x7f020011;
-        public static final int shape_login_button_normal=0x7f020012;
-        public static final int shape_login_button_selected=0x7f020013;
-        public static final int shape_offline_read_normal=0x7f020014;
-        public static final int shape_offline_read_pressed=0x7f020015;
-        public static final int shape_transparent=0x7f020016;
-        public static final int shape_transparent_blue=0x7f020017;
+        public static final int shape_login_button_normal=0x7f020011;
+        public static final int shape_login_button_selected=0x7f020012;
+        public static final int shape_offline_read_normal=0x7f020013;
+        public static final int shape_offline_read_pressed=0x7f020014;
     }
     public static final class id {
         public static final int agent_fragment_container=0x7f0c0000;
@@ -67,33 +68,38 @@ public final class R {
         public static final int list_price_text=0x7f0c0003;
         public static final int list_sub_header_text=0x7f0c0005;
         public static final int main_fragment_container=0x7f0c0001;
-        public static final int menu_agent_login=0x7f0c0029;
-        public static final int pager_image=0x7f0c001d;
-        public static final int property_contact_holder=0x7f0c0020;
-        public static final int property_details_address=0x7f0c0023;
-        public static final int property_details_description=0x7f0c0024;
+        public static final int menu_agent_login=0x7f0c002e;
+        public static final int pager_image=0x7f0c0021;
+        public static final int property_contact_holder=0x7f0c0024;
+        public static final int property_details_address=0x7f0c0028;
+        public static final int property_details_description=0x7f0c0029;
         public static final int property_details_fragment_container=0x7f0c0002;
-        public static final int property_details_header_image=0x7f0c001e;
-        public static final int property_details_interested_btn=0x7f0c0022;
-        public static final int property_details_price=0x7f0c0021;
-        public static final int property_details_title_text=0x7f0c001f;
-        public static final int property_detials_bathroom_count=0x7f0c0026;
-        public static final int property_detials_bedroom_count=0x7f0c0025;
-        public static final int property_detials_hall_count=0x7f0c0027;
-        public static final int property_detials_kitchen_count=0x7f0c0028;
+        public static final int property_details_header_image=0x7f0c0022;
+        public static final int property_details_interested_btn=0x7f0c0027;
+        public static final int property_details_price=0x7f0c0025;
+        public static final int property_details_price_currency=0x7f0c0026;
+        public static final int property_details_title_text=0x7f0c0023;
+        public static final int property_detials_bathroom_count=0x7f0c002b;
+        public static final int property_detials_bedroom_count=0x7f0c002a;
+        public static final int property_detials_hall_count=0x7f0c002c;
+        public static final int property_detials_kitchen_count=0x7f0c002d;
         public static final int upload_add_image_btn=0x7f0c0015;
+        public static final int upload_bathrooms=0x7f0c001c;
+        public static final int upload_bedrooms=0x7f0c001b;
         public static final int upload_description=0x7f0c0014;
-        public static final int upload_discard_btn=0x7f0c001c;
+        public static final int upload_discard_btn=0x7f0c0020;
+        public static final int upload_enter_address=0x7f0c0012;
         public static final int upload_enter_price=0x7f0c0013;
         public static final int upload_footer_layout=0x7f0c0010;
+        public static final int upload_hall=0x7f0c001d;
         public static final int upload_image_1=0x7f0c0016;
         public static final int upload_image_2=0x7f0c0017;
         public static final int upload_image_3=0x7f0c0018;
         public static final int upload_image_4=0x7f0c0019;
         public static final int upload_image_5=0x7f0c001a;
+        public static final int upload_kitchen=0x7f0c001e;
         public static final int upload_property_name=0x7f0c0011;
-        public static final int upload_select_place_btn=0x7f0c0012;
-        public static final int upload_start_btn=0x7f0c001b;
+        public static final int upload_start_btn=0x7f0c001f;
     }
     public static final class integer {
         public static final int card_flip_time_full=0x7f070000;

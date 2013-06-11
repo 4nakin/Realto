@@ -37,6 +37,7 @@ public class DataListFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 		mNetworkUtil = new NetworkUtil();
 		mAdapter = new ItemListAdapter(getActivity());
+		getServerPropertyData();
 	}
 
 	public void getServerPropertyData() {
@@ -53,7 +54,6 @@ public class DataListFragment extends ListFragment {
 		getListView().setPadding(
 				getResources().getDimensionPixelSize(R.dimen.upload_gallery_image_margin), 0, 
 				getResources().getDimensionPixelSize(R.dimen.upload_gallery_image_margin), 0);
-		getServerPropertyData();
 	}
 
 	@Override

@@ -63,17 +63,29 @@ public class MainActivity extends FragmentActivity implements DataListFragment.O
 
 	@Override
 	public void onPropertyListClicked(PropertyDetailsObject mData) {
+		Bundle arguments = new Bundle();
+		arguments.putString(PropertyDetailsFragment.TAG_ID, mData.getPropertyID());
+		arguments.putString(PropertyDetailsFragment.TAG_TITLE, mData.getPropertyTitle());
+		arguments.putString(PropertyDetailsFragment.TAG_ADDRESS, mData.getPropertyAddress());
+		arguments.putString(PropertyDetailsFragment.TAG_DESCRIPTION, mData.getPropertyDescription());
+		arguments.putString(PropertyDetailsFragment.TAG_PRICE, mData.getPropertyPrice());
+		arguments.putString(PropertyDetailsFragment.TAG_CURRENCY, mData.getCurrency());
+		arguments.putString(PropertyDetailsFragment.TAG_CONTACT, mData.getPropertyUploaderMail());
+		arguments.putStringArray(PropertyDetailsFragment.TAG_IMAGES, mData.getPropertyImagesURL());
+		arguments.putStringArray(PropertyDetailsFragment.TAG_ROOMS, mData.getPropertyRoomCount());
+		PropertyDetailsFragment mFragment = new PropertyDetailsFragment();
+		mFragment.setArguments(arguments);
 		//For phones
 		if(findViewById(R.id.main_fragment_container) != null) {
 			getActionBar().setDisplayHomeAsUpEnabled(true);
 			getActionBar().setDisplayShowTitleEnabled(true);
 			getActionBar().setTitle(mData.getPropertyTitle());
-			changeFragment(new PropertyDetailsFragment(mData));
+			changeFragment(mFragment);
 		} else {
 			getSupportFragmentManager()
-            .beginTransaction()
-            .replace(R.id.property_details_fragment_container, new PropertyDetailsFragment(mData))
-            .commit();
+	            .beginTransaction()
+	            .replace(R.id.property_details_fragment_container, mFragment)
+	            .commit();
 		}
 	}
 }
