@@ -29,8 +29,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/property_details_header_image"
         android:background="@android:color/holo_blue_dark"
+        android:divider="?android:dividerVertical"
+        android:dividerPadding="5dp"
         android:gravity="center"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:showDividers="middle"  >
 
         <LinearLayout
             android:layout_width="match_parent"

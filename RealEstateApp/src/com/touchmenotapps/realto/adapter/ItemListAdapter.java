@@ -22,8 +22,8 @@ public class ItemListAdapter extends BaseAdapter {
 	}
 	
 	public void setListData(ArrayList<PropertyDetailsObject> data ) {
-		notifyDataSetChanged();
 		mData = data;
+		notifyDataSetChanged();
 	}
 	
 	@Override

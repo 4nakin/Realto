@@ -1,91 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:divider="?android:dividerVertical"
+    android:orientation="horizontal" 
+    android:showDividers="middle">
 
-    <com.touchmenotapps.realto.widgets.TouchHighlightImageButton
-        android:id="@+id/property_details_header_image"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:scaleType="centerCrop" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1" >
 
-    <TextView
-        android:id="@+id/property_details_title_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/property_details_header_image"
-        android:background="#88000000"
-        android:fontFamily="sans-serif-condensed"
-        android:gravity="center"
-        android:padding="3dp"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:id="@+id/property_contact_holder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/property_details_header_image"
-        android:background="@android:color/holo_blue_dark"
-        android:divider="?android:dividerVertical"
-        android:dividerPadding="5dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:showDividers="middle" >
-
-        <LinearLayout
+        <com.touchmenotapps.realto.widgets.TouchHighlightImageButton
+            android:id="@+id/property_details_header_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp" >
+            android:layout_above="@+id/property_contact_holder"
+            android:scaleType="centerCrop" />
 
-            <TextView
-                android:id="@+id/property_details_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
-                android:gravity="center_horizontal"
-                android:singleLine="true"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/property_details_title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/property_details_header_image"
+            android:background="#88000000"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:padding="3dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/property_details_price_currency"
+        <LinearLayout
+            android:id="@+id/property_contact_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/holo_blue_dark"
+            android:divider="?android:dividerVertical"
+            android:dividerPadding="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:showDividers="middle" >
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp" >
+
+                <TextView
+                    android:id="@+id/property_details_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/property_details_price_currency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:textColor="#FFCCCCCC"
+                    android:textSize="14sp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/property_details_interested_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:drawableTop="@drawable/ic_action_contact"
                 android:fontFamily="sans-serif-light"
-                android:gravity="center_horizontal"
-                android:singleLine="true"
+                android:text="@string/interested"
                 android:textColor="#FFCCCCCC"
                 android:textSize="14sp"
                 android:textStyle="italic" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/property_details_interested_btn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:background="?android:selectableItemBackground"
-            android:drawableTop="@drawable/ic_action_contact"
-            android:fontFamily="sans-serif-light"
-            android:text="@string/interested"
-            android:textColor="#FFCCCCCC"
-            android:textSize="14sp"
-            android:textStyle="italic" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/property_contact_holder"
         android:fillViewport="true"
-        android:overScrollMode="never" >
+        android:overScrollMode="never" 
+        android:layout_weight="1">
 
         <GridLayout
             android:layout_width="match_parent"
@@ -155,4 +165,4 @@
         </GridLayout>
     </ScrollView>
 
-</RelativeLayout>
+</LinearLayout>

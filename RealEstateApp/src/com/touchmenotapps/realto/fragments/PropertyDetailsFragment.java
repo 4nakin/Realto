@@ -8,7 +8,6 @@ import com.touchmenotapps.realto.model.PropertyDetailsObject;
 import com.touchmenotapps.realto.utils.NetworkUtil;
 import com.touchmenotapps.realto.utils.SendContactInfoUtil;
 
-import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -24,7 +23,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-@SuppressLint("ValidFragment")
 public class PropertyDetailsFragment extends Fragment{
 	
 	public static final String TAG_ID = "id";
