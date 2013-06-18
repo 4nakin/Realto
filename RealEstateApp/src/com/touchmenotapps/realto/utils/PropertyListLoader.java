@@ -15,14 +15,14 @@ import android.support.v4.content.AsyncTaskLoader;
 import com.touchmenotapps.realto.R;
 import com.touchmenotapps.realto.model.PropertyDetailsObject;
 
-public class AppListLoader extends AsyncTaskLoader<ArrayList<PropertyDetailsObject>> {
+public class PropertyListLoader extends AsyncTaskLoader<ArrayList<PropertyDetailsObject>> {
 
 	@SuppressWarnings("unused")
 	private final String URL = "";
 	private NetworkUtil mNetworkUtil;
 	private Context mContext;
 	
-	public AppListLoader(Context context) {
+	public PropertyListLoader(Context context) {
 		super(context);
 		mNetworkUtil = new NetworkUtil();
 		mContext = context;

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Realto</string>
+    <string name="app_name">RealTo</string>
     <string name="menu_about">About</string>
     <string name="menu_agent_login">Agent Login</string>
     <string name="interested">Get Contacted</string>
+    <string name="company">by Radiant Technologies</string>
     <string name="price">Price</string>
     <string name="name">Name</string>
     <string name="mail">Email Address</string>
@@ -19,6 +20,7 @@
     <string name="new_upload">New Upload</string>
     <string name="gallery_empty">Gallery Empty</string>
     <string name="image_gallery">Gallery</string>
+    <string name="email_agent">Email Agent</string>
     
     <string name="title">Title</string>
     <string name="select_location">Address</string>

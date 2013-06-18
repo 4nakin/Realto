@@ -18,7 +18,8 @@ public class MainActivity extends FragmentActivity implements DataListFragment.O
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		getActionBar().setDisplayShowTitleEnabled(false);
+		if(findViewById(R.id.main_fragment_container) == null) 
+			getActionBar().setDisplayShowTitleEnabled(false);
 		mDataListFragment = new DataListFragment();
 	}
 

@@ -7,7 +7,7 @@
     <com.touchmenotapps.realto.widgets.TouchHighlightImageButton
         android:id="@+id/property_details_header_image"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="@dimen/property_details_image_height"
         android:scaleType="centerCrop" />
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/property_details_header_image"
-        android:background="#88000000"
+        android:background="@color/transparent_background_color"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:padding="3dp"
@@ -60,7 +60,7 @@
                 android:fontFamily="sans-serif-light"
                 android:gravity="center_horizontal"
                 android:singleLine="true"
-                android:textColor="#FFCCCCCC"
+                android:textColor="@color/text_color"
                 android:textSize="14sp"
                 android:textStyle="italic" />
         </LinearLayout>
@@ -75,7 +75,7 @@
             android:drawableTop="@drawable/ic_action_contact"
             android:fontFamily="sans-serif-light"
             android:text="@string/interested"
-            android:textColor="#FFCCCCCC"
+            android:textColor="@color/text_color"
             android:textSize="14sp"
             android:textStyle="italic" />
     </LinearLayout>
@@ -102,7 +102,7 @@
                 android:drawableLeft="@drawable/ic_action_map"
                 android:fontFamily="sans-serif-light"
                 android:padding="5dp"
-                android:textColor="#FF838383"
+                android:textColor="@color/body_text_color"
                 android:textSize="16sp"
                 android:textStyle="italic" />
 
@@ -110,7 +110,7 @@
                 android:id="@+id/property_details_description"
                 android:layout_columnSpan="2"
                 android:padding="5dp"
-                android:textColor="#FF838383"
+                android:textColor="@color/body_text_color"
                 android:textSize="12sp" />
 
             <TextView

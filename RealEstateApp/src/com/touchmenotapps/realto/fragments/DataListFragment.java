@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.touchmenotapps.realto.R;
 import com.touchmenotapps.realto.adapter.ItemListAdapter;
 import com.touchmenotapps.realto.model.PropertyDetailsObject;
-import com.touchmenotapps.realto.utils.AppListLoader;
+import com.touchmenotapps.realto.utils.PropertyListLoader;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -63,7 +63,7 @@ public class DataListFragment extends ListFragment implements LoaderCallbacks<Ar
 	@Override
 	public Loader<ArrayList<PropertyDetailsObject>> onCreateLoader(int arg0,
 			Bundle arg1) {
-		return new AppListLoader(getActivity());
+		return new PropertyListLoader(getActivity());
 	}
 
 	@Override

@@ -90,7 +90,7 @@ public class PropertyDetailsFragment extends Fragment{
 		mViewHolder.findViewById(R.id.property_details_interested_btn).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mContactUtil.getContactedDialog();
+				mContactUtil.getContactedDialog(mPropertyDetails);
 			}
 		});
 		
