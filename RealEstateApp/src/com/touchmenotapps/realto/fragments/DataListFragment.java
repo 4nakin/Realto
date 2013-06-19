@@ -34,14 +34,6 @@ public class DataListFragment extends ListFragment implements LoaderCallbacks<Ar
 		setListShown(false);
 		getLoaderManager().initLoader(LOADER_ID, null, this).forceLoad();
 	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		getListView().setPadding(
-				getResources().getDimensionPixelSize(R.dimen.upload_gallery_image_margin), 0, 
-				getResources().getDimensionPixelSize(R.dimen.upload_gallery_image_margin), 0);
-	}
 	
 	@Override
 	public void onAttach(Activity activity) {

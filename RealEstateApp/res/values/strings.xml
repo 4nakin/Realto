@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">RealTo</string>
+    <string name="agent_app_name">RealTo Agent</string>
     <string name="menu_about">About</string>
     <string name="menu_agent_login">Agent Login</string>
     <string name="interested">Get Contacted</string>
@@ -21,7 +22,6 @@
     <string name="gallery_empty">Gallery Empty</string>
     <string name="image_gallery">Gallery</string>
     <string name="email_agent">Email Agent</string>
-    
     <string name="title">Title</string>
     <string name="select_location">Address</string>
     <string name="description">Enter Description</string>

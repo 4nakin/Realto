@@ -17,6 +17,7 @@ public class AgentActivity extends Activity
 		setContentView(R.layout.activity_agent);
 		getActionBar().setTitle(R.string.menu_agent_login);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_app_bar_bg));
 		getFragmentManager().beginTransaction().replace(R.id.agent_fragment_container, new AgentLoginFragment()).commit();
 	}
 	

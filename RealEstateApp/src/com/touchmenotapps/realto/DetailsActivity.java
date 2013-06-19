@@ -12,6 +12,7 @@ public class DetailsActivity extends FragmentActivity {
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
 		setContentView(R.layout.activity_details);
+		getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_app_bar_bg));
 		getActionBar().setTitle(getIntent().getStringExtra(PropertyDetailsFragment.TAG_TITLE));
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		/** Fetch and bundle the data */
