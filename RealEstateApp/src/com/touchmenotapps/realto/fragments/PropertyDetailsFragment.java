@@ -119,14 +119,26 @@ public class PropertyDetailsFragment extends Fragment{
 		.setText(getString(R.string.price) + " (" + mPropertyDetails.getCurrency() + ")");
 	
 	if(mPropertyDetails.getPropertyRoomCount() != null) {
-		((TextView) mViewHolder.findViewById(R.id.property_detials_bedroom_count))
-			.setText(mPropertyDetails.getPropertyRoomCount()[0]);
-		((TextView) mViewHolder.findViewById(R.id.property_detials_bathroom_count))
-			.setText(mPropertyDetails.getPropertyRoomCount()[1]);
-		((TextView) mViewHolder.findViewById(R.id.property_detials_kitchen_count))
-			.setText(mPropertyDetails.getPropertyRoomCount()[2]);
-		((TextView) mViewHolder.findViewById(R.id.property_detials_hall_count))
-			.setText(mPropertyDetails.getPropertyRoomCount()[3]);
+		for(int counter = 0; counter <mPropertyDetails.getPropertyRoomCount().length; counter++) {
+			switch(counter) {
+			case 0:
+				((TextView) mViewHolder.findViewById(R.id.property_detials_bedroom_count))
+					.setText(mPropertyDetails.getPropertyRoomCount()[counter]);
+				break;
+			case 1:
+				((TextView) mViewHolder.findViewById(R.id.property_detials_bathroom_count))
+					.setText(mPropertyDetails.getPropertyRoomCount()[counter]);
+				break;
+			case 2:
+				((TextView) mViewHolder.findViewById(R.id.property_detials_kitchen_count))
+					.setText(mPropertyDetails.getPropertyRoomCount()[counter]);
+				break;
+			case 3:
+				((TextView) mViewHolder.findViewById(R.id.property_detials_hall_count))
+					.setText(mPropertyDetails.getPropertyRoomCount()[counter]);
+				break;
+			}
+		}
 	}
 	
 	if(mPropertyDetails.getPropertyImagesURL() != null && mPropertyDetails.getPropertyImagesURL().length > 0) {

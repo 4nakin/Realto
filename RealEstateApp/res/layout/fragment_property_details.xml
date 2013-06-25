@@ -8,7 +8,8 @@
         android:id="@+id/property_details_header_image"
         android:layout_width="match_parent"
         android:layout_height="@dimen/property_details_image_height"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/property_details_title_text"
@@ -130,6 +131,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:gravity="center_vertical"
                     android:singleLine="true"
+                    android:text="@string/not_available"
                     android:textColor="@android:color/holo_blue_dark"
                     android:textStyle="bold" />
 
@@ -142,6 +144,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:gravity="center_vertical"
                     android:singleLine="true"
+                    android:text="@string/not_available"
                     android:textColor="@android:color/holo_blue_dark"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -164,6 +167,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:gravity="center_vertical"
                     android:singleLine="true"
+                    android:text="@string/not_available"
                     android:textColor="@android:color/holo_blue_dark"
                     android:textStyle="bold" />
 
@@ -176,6 +180,7 @@
                     android:fontFamily="sans-serif-condensed"
                     android:gravity="center_vertical"
                     android:singleLine="true"
+                    android:text="@string/not_available"
                     android:textColor="@android:color/holo_blue_dark"
                     android:textStyle="bold" />
             </LinearLayout>

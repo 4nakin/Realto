@@ -152,11 +152,11 @@ public final class R {
         public static final int discard=0x7f090019;
         public static final int discard_entry=0x7f09001a;
         public static final int email_agent=0x7f090014;
-        public static final int error_contact_entry=0x7f090022;
-        public static final int error_login_field_empty=0x7f090023;
-        public static final int error_maps_app=0x7f090021;
-        public static final int error_no_network_gallery=0x7f090025;
-        public static final int error_server_data_fetching=0x7f090024;
+        public static final int error_contact_entry=0x7f090023;
+        public static final int error_login_field_empty=0x7f090024;
+        public static final int error_maps_app=0x7f090022;
+        public static final int error_no_network_gallery=0x7f090026;
+        public static final int error_server_data_fetching=0x7f090025;
         public static final int gallery_empty=0x7f090012;
         public static final int gallery_image=0x7f090020;
         public static final int image_gallery=0x7f090013;
@@ -170,6 +170,7 @@ public final class R {
         public static final int network_error=0x7f09001e;
         public static final int new_upload=0x7f090011;
         public static final int no_data=0x7f09001d;
+        public static final int not_available=0x7f090021;
         public static final int password=0x7f09000f;
         public static final int phone=0x7f09000a;
         public static final int price=0x7f090006;

@@ -1,7 +1,7 @@
 package com.touchmenotapps.realto.utils;
 
-import java.io.InputStream;
 import java.util.ArrayList;
+import java.net.URL;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -12,13 +12,11 @@ import org.xml.sax.XMLReader;
 import android.content.Context;
 import android.support.v4.content.AsyncTaskLoader;
 
-import com.touchmenotapps.realto.R;
 import com.touchmenotapps.realto.model.PropertyDetailsObject;
 
 public class PropertyListLoader extends AsyncTaskLoader<ArrayList<PropertyDetailsObject>> {
 
-	@SuppressWarnings("unused")
-	private final String URL = "";
+	private final String URL = "http://appztiger.com/demo/wordpress/property_list.php";
 	private NetworkUtil mNetworkUtil;
 	private Context mContext;
 	
@@ -32,16 +30,17 @@ public class PropertyListLoader extends AsyncTaskLoader<ArrayList<PropertyDetail
 	public ArrayList<PropertyDetailsObject> loadInBackground() {
 		if(mNetworkUtil.isNetworkAvailable(mContext)) {
 			try {
-                //URL url= new URL(urls[0]);
+                URL url= new URL(URL);
                 SAXParserFactory factory =SAXParserFactory.newInstance();
                 SAXParser parser=factory.newSAXParser();
                 XMLReader xmlreader=parser.getXMLReader();
                 
                 ServerResponseHandler mResponseHandler=new ServerResponseHandler();
                 xmlreader.setContentHandler(mResponseHandler);
-                //InputSource is=new InputSource(url.openStream());
-                InputStream is = mContext.getResources().openRawResource(R.raw.sample);
-                xmlreader.parse(new InputSource(is));
+                InputSource is=new InputSource(url.openStream());
+                //InputStream is = mContext.getResources().openRawResource(R.raw.sample);
+                //xmlreader.parse(new InputSource(is));
+                xmlreader.parse(is);
                 return mResponseHandler.getData();
             } catch (Exception e) {
                 e.printStackTrace();
