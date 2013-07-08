@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.touchmenotapps.realto.R;
 import com.touchmenotapps.realto.adapter.ItemListAdapter;
+import com.touchmenotapps.realto.interfaces.OnPropertySelectedListener;
 import com.touchmenotapps.realto.model.PropertyDetailsObject;
 import com.touchmenotapps.realto.utils.PropertyListLoader;
 
@@ -20,10 +21,6 @@ public class DataListFragment extends ListFragment implements LoaderCallbacks<Ar
 	private final int LOADER_ID = 123;
 	private ItemListAdapter mAdapter;
 	private OnPropertySelectedListener mCallback;
-
-	public interface OnPropertySelectedListener {
-		public void onPropertyListClicked(PropertyDetailsObject mData);
-	}
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {

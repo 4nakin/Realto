@@ -1,6 +1,7 @@
 package com.touchmenotapps.realto.fragments;
 
 import com.touchmenotapps.realto.R;
+import com.touchmenotapps.realto.utils.AuthenticateUser;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -19,6 +20,8 @@ public class AgentLoginFragment extends Fragment {
 	private Button mLoginButton;
 	private EditText mUsername, mPassword;
 	private OnLoginPressedListener mCallback;
+	@SuppressWarnings("unused")
+	private AuthenticateUser mAuthenticate;
 	
 	public interface OnLoginPressedListener {
 		public void onLoginSuccess();
@@ -27,6 +30,8 @@ public class AgentLoginFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		setRetainInstance(true);
+		mAuthenticate = new AuthenticateUser(getActivity(), mCallback);
 		mViewHolder = inflater.inflate(R.layout.fragment_agent_login, null);
 		mUsername = (EditText) mViewHolder.findViewById(R.id.agent_login_username);
 		mPassword = (EditText) mViewHolder.findViewById(R.id.agent_login_password);
@@ -34,6 +39,7 @@ public class AgentLoginFragment extends Fragment {
 		mLoginButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
+				//mAuthenticate.execute(new String[] {mUsername.getText().toString(), mPassword.getText().toString()});
 				if(mUsername.getText().toString().trim().length() > 0 &&
 						mPassword.getText().toString().trim().length() > 0) {
 					mCallback.onLoginSuccess();

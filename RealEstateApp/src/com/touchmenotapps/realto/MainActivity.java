@@ -2,6 +2,7 @@ package com.touchmenotapps.realto;
 
 import com.touchmenotapps.realto.fragments.DataListFragment;
 import com.touchmenotapps.realto.fragments.PropertyDetailsFragment;
+import com.touchmenotapps.realto.interfaces.OnPropertySelectedListener;
 import com.touchmenotapps.realto.model.PropertyDetailsObject;
 
 import android.content.Intent;
@@ -10,7 +11,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends FragmentActivity implements DataListFragment.OnPropertySelectedListener {
+public class MainActivity extends FragmentActivity implements OnPropertySelectedListener {
 	
 	private DataListFragment mDataListFragment;
 	

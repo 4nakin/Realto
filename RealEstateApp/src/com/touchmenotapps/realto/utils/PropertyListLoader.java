@@ -31,6 +31,10 @@ public class PropertyListLoader extends AsyncTaskLoader<ArrayList<PropertyDetail
 		if(mNetworkUtil.isNetworkAvailable(mContext)) {
 			try {
                 URL url= new URL(URL);
+                /*URLConnection con = url.openConnection();
+                con.setConnectTimeout(5000);
+                con.setReadTimeout(5000);
+                InputStream in = con.getInputStream();*/                
                 SAXParserFactory factory =SAXParserFactory.newInstance();
                 SAXParser parser=factory.newSAXParser();
                 XMLReader xmlreader=parser.getXMLReader();
@@ -38,8 +42,8 @@ public class PropertyListLoader extends AsyncTaskLoader<ArrayList<PropertyDetail
                 ServerResponseHandler mResponseHandler=new ServerResponseHandler();
                 xmlreader.setContentHandler(mResponseHandler);
                 InputSource is=new InputSource(url.openStream());
-                //InputStream is = mContext.getResources().openRawResource(R.raw.sample);
-                //xmlreader.parse(new InputSource(is));
+                //InputStream in = mContext.getResources().openRawResource(R.raw.sample);
+                //xmlreader.parse(new InputSource(in));
                 xmlreader.parse(is);
                 return mResponseHandler.getData();
             } catch (Exception e) {
