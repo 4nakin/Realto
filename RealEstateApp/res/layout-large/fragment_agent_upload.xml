@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/upload_footer_layout"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:overScrollMode="never" >
 
         <LinearLayout
@@ -31,49 +32,28 @@
 
             <EditText
                 android:id="@+id/upload_enter_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@null"
+                style="@style/UploadFormDetailsEditText"
                 android:drawableLeft="@drawable/ic_action_map"
-                android:fontFamily="sans-serif-light"
                 android:hint="@string/select_location"
                 android:imeOptions="actionNext"
-                android:inputType="textPostalAddress"
-                android:padding="5dp"
-                android:textColor="#FF838383"
-                android:textSize="16sp"
-                android:textStyle="italic" />
+                android:inputType="textPostalAddress" />
 
             <EditText
                 android:id="@+id/upload_enter_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@null"
+                style="@style/UploadFormDetailsEditText"
                 android:drawableLeft="@drawable/ic_action_coins"
-                android:fontFamily="sans-serif-light"
                 android:hint="@string/price"
                 android:imeOptions="actionNext"
                 android:inputType="number"
-                android:padding="5dp"
-                android:singleLine="true"
-                android:textColor="#FF838383"
-                android:textSize="16sp"
-                android:textStyle="italic" />
+                android:singleLine="true" />
 
             <EditText
                 android:id="@+id/upload_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@null"
+                style="@style/UploadFormDetailsEditText"
                 android:drawableLeft="@drawable/ic_action_description"
-                android:fontFamily="sans-serif-light"
                 android:hint="@string/description"
                 android:imeOptions="actionDone"
-                android:lines="4"
-                android:padding="5dp"
-                android:textColor="#FF838383"
-                android:textSize="16sp"
-                android:textStyle="italic" />
+                android:lines="4" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -99,135 +79,96 @@
 
                     <Button
                         android:id="@+id/upload_add_image_btn"
-                        android:layout_width="@dimen/upload_gallery_image_size"
-                        android:layout_height="@dimen/upload_gallery_image_size"
-                        android:layout_margin="@dimen/upload_gallery_image_margin"
-                        android:background="@drawable/selector_offline_read_button"
-                        android:gravity="center"
-                        android:text="@string/add_image"
-                        android:textColor="#FF838383"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                        style="@style/UploadAddImageButton" />
 
                     <ImageView
                         android:id="@+id/upload_image_1"
-                        android:layout_width="@dimen/upload_gallery_image_size"
-                        android:layout_height="@dimen/upload_gallery_image_size"
-                        android:layout_margin="@dimen/upload_gallery_image_margin"
-                        android:background="@drawable/shape_offline_read_pressed"
-                        android:contentDescription="@string/gallery_image"
-                        android:cropToPadding="true"
-                        android:padding="3dp"
-                        android:scaleType="centerCrop"
-                        android:visibility="gone" />
+                        style="@style/UploadImageContainer"
+                        android:contentDescription="@string/gallery_image" />
 
                     <ImageView
                         android:id="@+id/upload_image_2"
-                        android:layout_width="@dimen/upload_gallery_image_size"
-                        android:layout_height="@dimen/upload_gallery_image_size"
-                        android:layout_margin="@dimen/upload_gallery_image_margin"
-                        android:background="@drawable/shape_offline_read_pressed"
-                        android:contentDescription="@string/gallery_image"
-                        android:cropToPadding="true"
-                        android:padding="3dp"
-                        android:scaleType="centerCrop"
-                        android:visibility="gone" />
+                        style="@style/UploadImageContainer"
+                        android:contentDescription="@string/gallery_image" />
 
                     <ImageView
                         android:id="@+id/upload_image_3"
-                        android:layout_width="@dimen/upload_gallery_image_size"
-                        android:layout_height="@dimen/upload_gallery_image_size"
-                        android:layout_margin="@dimen/upload_gallery_image_margin"
-                        android:background="@drawable/shape_offline_read_pressed"
-                        android:contentDescription="@string/gallery_image"
-                        android:cropToPadding="true"
-                        android:padding="3dp"
-                        android:scaleType="centerCrop"
-                        android:visibility="gone" />
+                        style="@style/UploadImageContainer"
+                        android:contentDescription="@string/gallery_image" />
 
                     <ImageView
                         android:id="@+id/upload_image_4"
-                        android:layout_width="@dimen/upload_gallery_image_size"
-                        android:layout_height="@dimen/upload_gallery_image_size"
-                        android:layout_margin="@dimen/upload_gallery_image_margin"
-                        android:background="@drawable/shape_offline_read_pressed"
-                        android:contentDescription="@string/gallery_image"
-                        android:cropToPadding="true"
-                        android:padding="3dp"
-                        android:scaleType="centerCrop"
-                        android:visibility="gone" />
+                        style="@style/UploadImageContainer"
+                        android:contentDescription="@string/gallery_image" />
 
                     <ImageView
                         android:id="@+id/upload_image_5"
-                        android:layout_width="@dimen/upload_gallery_image_size"
-                        android:layout_height="@dimen/upload_gallery_image_size"
-                        android:layout_margin="@dimen/upload_gallery_image_margin"
-                        android:background="@drawable/shape_offline_read_pressed"
-                        android:contentDescription="@string/gallery_image"
-                        android:cropToPadding="true"
-                        android:padding="3dp"
-                        android:scaleType="centerCrop"
-                        android:visibility="gone" />
+                        style="@style/UploadImageContainer"
+                        android:contentDescription="@string/gallery_image" />
                 </LinearLayout>
             </HorizontalScrollView>
 
             <LinearLayout
+                android:id="@+id/upload_other_rooms_list"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
+                android:layout_height="match_parent"
                 android:divider="?android:dividerVertical"
-                android:dividerPadding="2dp"
-                android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
+                android:padding="5dp"
                 android:showDividers="middle" >
 
-                <Spinner
-                    android:id="@+id/upload_bedrooms"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:entries="@array/bedroom_count" />
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical" >
 
-                <Spinner
-                    android:id="@+id/upload_bathrooms"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:text="@string/bedroom"
+                        android:textColor="@color/body_text_color"
+                        android:textSize="16sp" />
+
+                    <Spinner
+                        android:id="@+id/upload_bedrooms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/search_bedroom_count" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:entries="@array/bathroom_count" />
-            </LinearLayout>
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:divider="?android:dividerVertical"
-                android:dividerPadding="2dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:showDividers="middle" >
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:text="@string/bathroom"
+                        android:textColor="@color/body_text_color"
+                        android:textSize="16sp" />
 
-                <Spinner
-                    android:id="@+id/upload_hall"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:entries="@array/hall_count" />
-
-                <Spinner
-                    android:id="@+id/upload_kitchen"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:entries="@array/kitchen_count" />
+                    <Spinner
+                        android:id="@+id/upload_bathrooms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/search_bathroom_count" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
-        android:id="@+id/upload_footer_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
 
         <Button
@@ -253,4 +194,4 @@
             android:textColor="#FF838383" />
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

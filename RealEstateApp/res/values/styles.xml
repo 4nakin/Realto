@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -15,6 +15,51 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="UploadImageContainer">
+        <item name="android:layout_width">@dimen/upload_gallery_image_size</item>
+        <item name="android:layout_height">@dimen/upload_gallery_image_size</item>
+        <item name="android:layout_margin">@dimen/upload_gallery_image_margin</item>
+        <item name="android:background">@drawable/shape_offline_read_pressed</item>
+        <item name="android:cropToPadding">true</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    
+    <style name="UploadAddImageButton">
+        <item name="android:layout_width">@dimen/upload_gallery_image_size</item>
+        <item name="android:layout_height">@dimen/upload_gallery_image_size</item>
+        <item name="android:layout_margin">@dimen/upload_gallery_image_margin</item>
+        <item name="android:background">@drawable/selector_offline_read_button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/add_image</item>
+        <item name="android:textColor">#FF838383</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="UploadFormDetailsEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textColor">#FF838383</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+    
+    <style name="DetailsRoomCountText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:text">@string/not_available</item>
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
     </style>
 
 </resources>

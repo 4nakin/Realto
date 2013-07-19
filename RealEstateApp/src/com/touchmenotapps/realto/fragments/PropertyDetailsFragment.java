@@ -1,10 +1,9 @@
 package com.touchmenotapps.realto.fragments;
 
-import java.io.InputStream;
-import java.net.URL;
-
 import com.touchmenotapps.realto.R;
+import com.touchmenotapps.realto.interfaces.OnImageDownloadComplete;
 import com.touchmenotapps.realto.model.PropertyDetailsObject;
+import com.touchmenotapps.realto.utils.LoadImageFromWebTask;
 import com.touchmenotapps.realto.utils.NetworkUtil;
 import com.touchmenotapps.realto.utils.SendContactInfoUtil;
 
@@ -12,7 +11,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -40,6 +38,7 @@ public class PropertyDetailsFragment extends Fragment{
 	private SendContactInfoUtil mContactUtil;
 	private PropertyDetailsObject mPropertyDetails;
 	private NetworkUtil mNetworkUtil;
+	private String mOtherRoomDetails = "/n/n";
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -107,46 +106,43 @@ public class PropertyDetailsFragment extends Fragment{
 	}
 	
 	private void initView() {
-		((TextView) mViewHolder.findViewById(R.id.property_details_title_text))
-		.setText(mPropertyDetails.getPropertyTitle());
-	((TextView) mViewHolder.findViewById(R.id.property_details_address))
-		.setText(mPropertyDetails.getPropertyAddress());
-	((TextView) mViewHolder.findViewById(R.id.property_details_description))
-		.setText(mPropertyDetails.getPropertyDescription());
-	((TextView) mViewHolder.findViewById(R.id.property_details_price))
-		.setText(mPropertyDetails.getPropertyPrice());
-	((TextView) mViewHolder.findViewById(R.id.property_details_price_currency))
-		.setText(getString(R.string.price) + " (" + mPropertyDetails.getCurrency() + ")");
-	
-	if(mPropertyDetails.getPropertyRoomCount() != null) {
-		for(int counter = 0; counter <mPropertyDetails.getPropertyRoomCount().length; counter++) {
-			switch(counter) {
-			case 0:
-				((TextView) mViewHolder.findViewById(R.id.property_detials_bedroom_count))
-					.setText(mPropertyDetails.getPropertyRoomCount()[counter]);
-				break;
-			case 1:
-				((TextView) mViewHolder.findViewById(R.id.property_detials_bathroom_count))
-					.setText(mPropertyDetails.getPropertyRoomCount()[counter]);
-				break;
-			case 2:
-				((TextView) mViewHolder.findViewById(R.id.property_detials_kitchen_count))
-					.setText(mPropertyDetails.getPropertyRoomCount()[counter]);
-				break;
-			case 3:
-				((TextView) mViewHolder.findViewById(R.id.property_detials_hall_count))
-					.setText(mPropertyDetails.getPropertyRoomCount()[counter]);
-				break;
+		/** Get the room count **/
+		if(mPropertyDetails.getPropertyRoomCount() != null) {
+			for(int counter = 0; counter <mPropertyDetails.getPropertyRoomCount().length; counter++) {
+				switch(counter) {
+				case 0:
+					((TextView) mViewHolder.findViewById(R.id.property_detials_bedroom_count))
+						.setText(mPropertyDetails.getPropertyRoomCount()[counter]);
+					break;
+				case 1:
+					((TextView) mViewHolder.findViewById(R.id.property_detials_bathroom_count))
+						.setText(mPropertyDetails.getPropertyRoomCount()[counter]);
+					break;
+				}
+				if(counter > 1)
+					mOtherRoomDetails = mOtherRoomDetails + mPropertyDetails.getPropertyRoomCount()[counter];
 			}
 		}
-	}
-	
-	if(mPropertyDetails.getPropertyImagesURL() != null && mPropertyDetails.getPropertyImagesURL().length > 0) {
-		if(mNetworkUtil.isNetworkAvailable(getActivity()))
-			new LoadImageFromWebOperations().execute(mPropertyDetails.getPropertyImagesURL()[0]);
-		else
-			mImageButton.setBackgroundResource(R.drawable.ic_broken_file);
-	}
+		/** Set the other display text **/
+		((TextView) mViewHolder.findViewById(R.id.property_details_title_text))
+			.setText(mPropertyDetails.getPropertyTitle());
+		((TextView) mViewHolder.findViewById(R.id.property_details_address))
+			.setText(mPropertyDetails.getPropertyAddress());
+		((TextView) mViewHolder.findViewById(R.id.property_details_description))
+			.setText(mPropertyDetails.getPropertyDescription() + mOtherRoomDetails);
+		((TextView) mViewHolder.findViewById(R.id.property_details_price))
+			.setText(mPropertyDetails.getPropertyPrice());
+		((TextView) mViewHolder.findViewById(R.id.property_details_price_currency))
+			.setText(getString(R.string.price) + " (" + mPropertyDetails.getCurrency() + ")");
+		/** Set the other images **/
+		if(mPropertyDetails.getPropertyImagesURL() != null && mPropertyDetails.getPropertyImagesURL().length > 0) {
+			new LoadImageFromWebTask(getActivity(), new OnImageDownloadComplete() {
+				@Override
+				public void onImageDownloadCompleted(Drawable drawable) {
+					mImageButton.setImageDrawable(drawable);
+				}
+			});
+		}
 	}
 		
 	@Override
@@ -163,24 +159,4 @@ public class PropertyDetailsFragment extends Fragment{
 		}
 		dialog.show(getChildFragmentManager(), "galleryDialog");
 	}
-	
-	class LoadImageFromWebOperations extends AsyncTask<String, Void, Drawable> {
-        protected Drawable doInBackground(String... urls) {
-            try {
-    	        InputStream is = (InputStream) new URL(urls[0]).getContent();
-    	        Drawable d = Drawable.createFromStream(is, "image");
-    	        return d;
-    	    } catch (Exception e) {
-    	        e.printStackTrace();
-    	        return null;
-    	    }
-        }
-
-		protected void onPostExecute(Drawable drawable) {
-        	if(drawable != null) 
-        		mImageButton.setImageDrawable(drawable);
-        	else
-        		mImageButton.setImageResource(R.drawable.ic_broken_file);
-        }
-     }
 }

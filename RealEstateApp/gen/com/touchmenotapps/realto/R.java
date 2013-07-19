@@ -15,28 +15,142 @@ public final class R {
         public static final int card_flip_right_out=0x7f040003;
     }
     public static final class array {
-        public static final int bathroom_count=0x7f0a0002;
-        public static final int bedroom_count=0x7f0a0001;
-        public static final int hall_count=0x7f0a0003;
-        public static final int image_picker_options=0x7f0a0000;
-        public static final int kitchen_count=0x7f0a0004;
+        public static final int bathroom_count=0x7f0b0003;
+        public static final int bedroom_count=0x7f0b0001;
+        public static final int image_picker_options=0x7f0b0000;
+        public static final int other_rooms=0x7f0b0005;
+        public static final int search_bathroom_count=0x7f0b0004;
+        public static final int search_bedroom_count=0x7f0b0002;
     }
     public static final class attr {
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int behindOffset=0x7f010003;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int behindScrollScale=0x7f010005;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int behindWidth=0x7f010004;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fadeDegree=0x7f01000b;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fadeEnabled=0x7f01000a;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>left</code></td><td>0</td><td></td></tr>
+<tr><td><code>right</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int mode=0x7f010000;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int selectorDrawable=0x7f01000d;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int selectorEnabled=0x7f01000c;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int shadowDrawable=0x7f010008;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int shadowWidth=0x7f010009;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int touchModeAbove=0x7f010006;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int touchModeBehind=0x7f010007;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int viewAbove=0x7f010001;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int viewBehind=0x7f010002;
     }
     public static final class color {
-        public static final int body_text_color=0x7f060002;
-        public static final int text_color=0x7f060000;
-        public static final int transparent_background_color=0x7f060001;
+        public static final int body_text_color=0x7f070002;
+        public static final int text_color=0x7f070000;
+        public static final int transparent_background_color=0x7f070001;
     }
     public static final class dimen {
-        public static final int gallery_image_height=0x7f070000;
-        public static final int list_address_text_size=0x7f070006;
-        public static final int list_name_text_size=0x7f070005;
-        public static final int list_price_text_size=0x7f070004;
-        public static final int property_details_image_height=0x7f070003;
-        public static final int table_login_widget_width=0x7f070007;
-        public static final int upload_gallery_image_margin=0x7f070002;
-        public static final int upload_gallery_image_size=0x7f070001;
+        public static final int gallery_image_height=0x7f080000;
+        public static final int list_address_text_size=0x7f080006;
+        public static final int list_name_text_size=0x7f080005;
+        public static final int list_price_text_size=0x7f080004;
+        public static final int property_details_image_height=0x7f080003;
+        public static final int shadow_width=0x7f080008;
+        public static final int slidingmenu_offset=0x7f080007;
+        public static final int table_login_widget_width=0x7f080009;
+        public static final int upload_gallery_image_margin=0x7f080002;
+        public static final int upload_gallery_image_size=0x7f080001;
     }
     public static final class drawable {
         public static final int activity_bg=0x7f020000;
@@ -51,75 +165,86 @@ public final class R {
         public static final int ic_action_password=0x7f020009;
         public static final int ic_action_person=0x7f02000a;
         public static final int ic_action_phone=0x7f02000b;
-        public static final int ic_bathroom=0x7f02000c;
-        public static final int ic_bedroom=0x7f02000d;
-        public static final int ic_broken_file=0x7f02000e;
-        public static final int ic_hall=0x7f02000f;
-        public static final int ic_kitchen=0x7f020010;
-        public static final int ic_launcher=0x7f020011;
-        public static final int logo=0x7f020012;
-        public static final int selector_login_button=0x7f020013;
-        public static final int selector_offline_read_button=0x7f020014;
-        public static final int shape_app_bar_bg=0x7f020015;
-        public static final int shape_login_button_normal=0x7f020016;
-        public static final int shape_login_button_selected=0x7f020017;
-        public static final int shape_offline_read_normal=0x7f020018;
-        public static final int shape_offline_read_pressed=0x7f020019;
+        public static final int ic_action_search=0x7f02000c;
+        public static final int ic_bathroom=0x7f02000d;
+        public static final int ic_bedroom=0x7f02000e;
+        public static final int ic_broken_file=0x7f02000f;
+        public static final int ic_hall=0x7f020010;
+        public static final int ic_kitchen=0x7f020011;
+        public static final int ic_launcher=0x7f020012;
+        public static final int logo=0x7f020013;
+        public static final int selector_login_button=0x7f020014;
+        public static final int selector_offline_read_button=0x7f020015;
+        public static final int shadow=0x7f020016;
+        public static final int shape_app_bar_bg=0x7f020017;
+        public static final int shape_login_button_normal=0x7f020018;
+        public static final int shape_login_button_selected=0x7f020019;
+        public static final int shape_offline_read_normal=0x7f02001a;
+        public static final int shape_offline_read_pressed=0x7f02001b;
+        public static final int slider_bg=0x7f02001c;
     }
     public static final class id {
-        public static final int agent_fragment_container=0x7f0d0000;
-        public static final int agent_login_password=0x7f0d0010;
-        public static final int agent_login_procced_btn=0x7f0d0011;
-        public static final int agent_login_username=0x7f0d000f;
-        public static final int contact_address=0x7f0d000a;
-        public static final int contact_mail=0x7f0d0009;
-        public static final int contact_name=0x7f0d0008;
-        public static final int contact_phone=0x7f0d000b;
-        public static final int details_fragment_contatiner=0x7f0d0001;
-        public static final int gallery_dialog_counter=0x7f0d000d;
-        public static final int gallery_dialog_empty=0x7f0d000e;
-        public static final int gallery_dialog_image_pager=0x7f0d000c;
-        public static final int list_header_text=0x7f0d0006;
-        public static final int list_price_text=0x7f0d0005;
-        public static final int list_sub_header_text=0x7f0d0007;
-        public static final int main_fragment_container=0x7f0d0002;
-        public static final int menu_agent_login=0x7f0d0030;
-        public static final int pager_image=0x7f0d0023;
-        public static final int property_contact_holder=0x7f0d0026;
-        public static final int property_details_address=0x7f0d002a;
-        public static final int property_details_description=0x7f0d002b;
-        public static final int property_details_fragment_container=0x7f0d0003;
-        public static final int property_details_header_image=0x7f0d0024;
-        public static final int property_details_interested_btn=0x7f0d0029;
-        public static final int property_details_price=0x7f0d0027;
-        public static final int property_details_price_currency=0x7f0d0028;
-        public static final int property_details_title_text=0x7f0d0025;
-        public static final int property_detials_bathroom_count=0x7f0d002d;
-        public static final int property_detials_bedroom_count=0x7f0d002c;
-        public static final int property_detials_hall_count=0x7f0d002e;
-        public static final int property_detials_kitchen_count=0x7f0d002f;
-        public static final int splash_app_text=0x7f0d0004;
-        public static final int upload_add_image_btn=0x7f0d0017;
-        public static final int upload_bathrooms=0x7f0d001e;
-        public static final int upload_bedrooms=0x7f0d001d;
-        public static final int upload_description=0x7f0d0016;
-        public static final int upload_discard_btn=0x7f0d0022;
-        public static final int upload_enter_address=0x7f0d0014;
-        public static final int upload_enter_price=0x7f0d0015;
-        public static final int upload_footer_layout=0x7f0d0012;
-        public static final int upload_hall=0x7f0d001f;
-        public static final int upload_image_1=0x7f0d0018;
-        public static final int upload_image_2=0x7f0d0019;
-        public static final int upload_image_3=0x7f0d001a;
-        public static final int upload_image_4=0x7f0d001b;
-        public static final int upload_image_5=0x7f0d001c;
-        public static final int upload_kitchen=0x7f0d0020;
-        public static final int upload_property_name=0x7f0d0013;
-        public static final int upload_start_btn=0x7f0d0021;
+        public static final int agent_fragment_container=0x7f060005;
+        public static final int agent_login_password=0x7f060015;
+        public static final int agent_login_procced_btn=0x7f060016;
+        public static final int agent_login_username=0x7f060014;
+        public static final int contact_address=0x7f06000f;
+        public static final int contact_mail=0x7f06000e;
+        public static final int contact_name=0x7f06000d;
+        public static final int contact_phone=0x7f060010;
+        public static final int details_fragment_contatiner=0x7f060006;
+        public static final int fullscreen=0x7f060003;
+        public static final int gallery_dialog_counter=0x7f060012;
+        public static final int gallery_dialog_empty=0x7f060013;
+        public static final int gallery_dialog_image_pager=0x7f060011;
+        public static final int left=0x7f060000;
+        public static final int list_header_text=0x7f06000b;
+        public static final int list_price_text=0x7f06000a;
+        public static final int list_sub_header_text=0x7f06000c;
+        public static final int main_fragment_container=0x7f060007;
+        public static final int margin=0x7f060002;
+        public static final int menu_agent_login=0x7f060038;
+        public static final int menu_search_property=0x7f060037;
+        public static final int pager_image=0x7f060026;
+        public static final int property_contact_holder=0x7f060029;
+        public static final int property_details_address=0x7f06002d;
+        public static final int property_details_description=0x7f060030;
+        public static final int property_details_fragment_container=0x7f060008;
+        public static final int property_details_header_image=0x7f060027;
+        public static final int property_details_interested_btn=0x7f06002c;
+        public static final int property_details_price=0x7f06002a;
+        public static final int property_details_price_currency=0x7f06002b;
+        public static final int property_details_title_text=0x7f060028;
+        public static final int property_detials_bathroom_count=0x7f06002f;
+        public static final int property_detials_bedroom_count=0x7f06002e;
+        public static final int right=0x7f060001;
+        public static final int search_bathrooms=0x7f060033;
+        public static final int search_bedrooms=0x7f060032;
+        public static final int search_btn=0x7f060035;
+        public static final int search_location_edittext=0x7f060031;
+        public static final int search_other_rooms_list=0x7f060034;
+        public static final int search_show_all_btn=0x7f060036;
+        public static final int selected_view=0x7f060004;
+        public static final int splash_app_text=0x7f060009;
+        public static final int upload_add_image_btn=0x7f06001b;
+        public static final int upload_bathrooms=0x7f060023;
+        public static final int upload_bedrooms=0x7f060022;
+        public static final int upload_description=0x7f06001a;
+        public static final int upload_discard_btn=0x7f060025;
+        public static final int upload_enter_address=0x7f060018;
+        public static final int upload_enter_price=0x7f060019;
+        public static final int upload_image_1=0x7f06001c;
+        public static final int upload_image_2=0x7f06001d;
+        public static final int upload_image_3=0x7f06001e;
+        public static final int upload_image_4=0x7f06001f;
+        public static final int upload_image_5=0x7f060020;
+        public static final int upload_other_rooms_list=0x7f060021;
+        public static final int upload_property_name=0x7f060017;
+        public static final int upload_start_btn=0x7f060024;
     }
     public static final class integer {
-        public static final int card_flip_time_full=0x7f080000;
-        public static final int card_flip_time_half=0x7f080001;
+        public static final int card_flip_time_full=0x7f090000;
+        public static final int card_flip_time_half=0x7f090001;
     }
     public static final class layout {
         public static final int activity_agent=0x7f030000;
@@ -133,53 +258,67 @@ public final class R {
         public static final int fragment_agent_upload=0x7f030008;
         public static final int fragment_pager_image=0x7f030009;
         public static final int fragment_property_details=0x7f03000a;
+        public static final int fragment_search=0x7f03000b;
+        public static final int layout_search_container=0x7f03000c;
     }
     public static final class menu {
-        public static final int activity_main=0x7f0c0000;
+        public static final int activity_main=0x7f0d0000;
     }
     public static final class raw {
         public static final int sample=0x7f050000;
     }
     public static final class string {
-        public static final int add_image=0x7f09001b;
-        public static final int address=0x7f090009;
-        public static final int agent_app_name=0x7f090001;
-        public static final int app_name=0x7f090000;
-        public static final int cancel=0x7f09000c;
-        public static final int company=0x7f090005;
-        public static final int contact_info=0x7f09000b;
-        public static final int description=0x7f090017;
-        public static final int discard=0x7f090019;
-        public static final int discard_entry=0x7f09001a;
-        public static final int email_agent=0x7f090014;
-        public static final int error_contact_entry=0x7f090023;
-        public static final int error_login_field_empty=0x7f090024;
-        public static final int error_maps_app=0x7f090022;
-        public static final int error_no_network_gallery=0x7f090026;
-        public static final int error_server_data_fetching=0x7f090025;
-        public static final int gallery_empty=0x7f090012;
-        public static final int gallery_image=0x7f090020;
-        public static final int image_gallery=0x7f090013;
-        public static final int images=0x7f09001c;
-        public static final int interested=0x7f090004;
-        public static final int login=0x7f090010;
-        public static final int mail=0x7f090008;
-        public static final int menu_about=0x7f090002;
-        public static final int menu_agent_login=0x7f090003;
-        public static final int name=0x7f090007;
-        public static final int network_error=0x7f09001e;
-        public static final int new_upload=0x7f090011;
-        public static final int no_data=0x7f09001d;
-        public static final int not_available=0x7f090021;
-        public static final int password=0x7f09000f;
-        public static final int phone=0x7f09000a;
-        public static final int price=0x7f090006;
-        public static final int select_location=0x7f090016;
-        public static final int send=0x7f09000d;
-        public static final int settings=0x7f09001f;
-        public static final int title=0x7f090015;
-        public static final int upload=0x7f090018;
-        public static final int username=0x7f09000e;
+        public static final int add_image=0x7f0a001c;
+        public static final int address=0x7f0a0009;
+        public static final int agent_app_name=0x7f0a0001;
+        public static final int app_name=0x7f0a0000;
+        public static final int authenticating=0x7f0a0023;
+        public static final int bathroom=0x7f0a0029;
+        public static final int bedroom=0x7f0a0028;
+        public static final int cancel=0x7f0a000c;
+        public static final int company=0x7f0a0005;
+        public static final int contact_info=0x7f0a000b;
+        public static final int description=0x7f0a0017;
+        public static final int discard=0x7f0a001a;
+        public static final int discard_entry=0x7f0a001b;
+        public static final int email_agent=0x7f0a0014;
+        public static final int enter_location=0x7f0a0025;
+        public static final int error_contact_entry=0x7f0a002d;
+        public static final int error_login_failed=0x7f0a002a;
+        public static final int error_login_field_empty=0x7f0a002e;
+        public static final int error_login_worng_credintials=0x7f0a002b;
+        public static final int error_maps_app=0x7f0a002c;
+        public static final int error_no_network=0x7f0a0031;
+        public static final int error_no_network_gallery=0x7f0a0030;
+        public static final int error_server_data_fetching=0x7f0a002f;
+        public static final int error_uploading=0x7f0a0032;
+        public static final int gallery_empty=0x7f0a0012;
+        public static final int gallery_image=0x7f0a0021;
+        public static final int image_gallery=0x7f0a0013;
+        public static final int images=0x7f0a001d;
+        public static final int interested=0x7f0a0004;
+        public static final int login=0x7f0a0010;
+        public static final int mail=0x7f0a0008;
+        public static final int menu_about=0x7f0a0002;
+        public static final int menu_agent_login=0x7f0a0003;
+        public static final int name=0x7f0a0007;
+        public static final int network_error=0x7f0a001f;
+        public static final int new_upload=0x7f0a0011;
+        public static final int no_data=0x7f0a001e;
+        public static final int not_available=0x7f0a0022;
+        public static final int or=0x7f0a0027;
+        public static final int password=0x7f0a000f;
+        public static final int phone=0x7f0a000a;
+        public static final int price=0x7f0a0006;
+        public static final int search=0x7f0a0024;
+        public static final int select_location=0x7f0a0016;
+        public static final int send=0x7f0a000d;
+        public static final int settings=0x7f0a0020;
+        public static final int show_all=0x7f0a0026;
+        public static final int title=0x7f0a0015;
+        public static final int upload=0x7f0a0018;
+        public static final int uploading=0x7f0a0019;
+        public static final int username=0x7f0a000e;
     }
     public static final class style {
         /** 
@@ -203,10 +342,253 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0b0000;
+        public static final int AppBaseTheme=0x7f0c0000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f0b0001;
+        public static final int AppTheme=0x7f0c0001;
+        public static final int DetailsRoomCountText=0x7f0c0005;
+        public static final int UploadAddImageButton=0x7f0c0003;
+        public static final int UploadFormDetailsEditText=0x7f0c0004;
+        public static final int UploadImageContainer=0x7f0c0002;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a SlidingMenu.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SlidingMenu_behindOffset com.touchmenotapps.realto:behindOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_behindScrollScale com.touchmenotapps.realto:behindScrollScale}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_behindWidth com.touchmenotapps.realto:behindWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_fadeDegree com.touchmenotapps.realto:fadeDegree}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_fadeEnabled com.touchmenotapps.realto:fadeEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_mode com.touchmenotapps.realto:mode}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_selectorDrawable com.touchmenotapps.realto:selectorDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_selectorEnabled com.touchmenotapps.realto:selectorEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_shadowDrawable com.touchmenotapps.realto:shadowDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_shadowWidth com.touchmenotapps.realto:shadowWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_touchModeAbove com.touchmenotapps.realto:touchModeAbove}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_touchModeBehind com.touchmenotapps.realto:touchModeBehind}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_viewAbove com.touchmenotapps.realto:viewAbove}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_viewBehind com.touchmenotapps.realto:viewBehind}</code></td><td></td></tr>
+           </table>
+           @see #SlidingMenu_behindOffset
+           @see #SlidingMenu_behindScrollScale
+           @see #SlidingMenu_behindWidth
+           @see #SlidingMenu_fadeDegree
+           @see #SlidingMenu_fadeEnabled
+           @see #SlidingMenu_mode
+           @see #SlidingMenu_selectorDrawable
+           @see #SlidingMenu_selectorEnabled
+           @see #SlidingMenu_shadowDrawable
+           @see #SlidingMenu_shadowWidth
+           @see #SlidingMenu_touchModeAbove
+           @see #SlidingMenu_touchModeBehind
+           @see #SlidingMenu_viewAbove
+           @see #SlidingMenu_viewBehind
+         */
+        public static final int[] SlidingMenu = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007,
+            0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b,
+            0x7f01000c, 0x7f01000d
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#behindOffset}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:behindOffset
+        */
+        public static final int SlidingMenu_behindOffset = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#behindScrollScale}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:behindScrollScale
+        */
+        public static final int SlidingMenu_behindScrollScale = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#behindWidth}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:behindWidth
+        */
+        public static final int SlidingMenu_behindWidth = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#fadeDegree}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:fadeDegree
+        */
+        public static final int SlidingMenu_fadeDegree = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#fadeEnabled}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:fadeEnabled
+        */
+        public static final int SlidingMenu_fadeEnabled = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#mode}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>left</code></td><td>0</td><td></td></tr>
+<tr><td><code>right</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name android:mode
+        */
+        public static final int SlidingMenu_mode = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#selectorDrawable}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:selectorDrawable
+        */
+        public static final int SlidingMenu_selectorDrawable = 13;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#selectorEnabled}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:selectorEnabled
+        */
+        public static final int SlidingMenu_selectorEnabled = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#shadowDrawable}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:shadowDrawable
+        */
+        public static final int SlidingMenu_shadowDrawable = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#shadowWidth}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:shadowWidth
+        */
+        public static final int SlidingMenu_shadowWidth = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#touchModeAbove}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name android:touchModeAbove
+        */
+        public static final int SlidingMenu_touchModeAbove = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#touchModeBehind}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name android:touchModeBehind
+        */
+        public static final int SlidingMenu_touchModeBehind = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#viewAbove}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:viewAbove
+        */
+        public static final int SlidingMenu_viewAbove = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.touchmenotapps.realto.R.attr#viewBehind}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:viewBehind
+        */
+        public static final int SlidingMenu_viewBehind = 2;
+    };
 }

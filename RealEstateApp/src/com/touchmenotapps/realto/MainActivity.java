@@ -3,17 +3,22 @@ package com.touchmenotapps.realto;
 import com.touchmenotapps.realto.fragments.DataListFragment;
 import com.touchmenotapps.realto.fragments.PropertyDetailsFragment;
 import com.touchmenotapps.realto.interfaces.OnPropertySelectedListener;
+import com.touchmenotapps.realto.interfaces.OnSearchListener;
 import com.touchmenotapps.realto.model.PropertyDetailsObject;
+import com.touchmenotapps.realto.slidingmenu.lib.SlidingMenu;
+import com.touchmenotapps.realto.utils.PropertyListLoader;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends FragmentActivity implements OnPropertySelectedListener {
+public class MainActivity extends FragmentActivity implements OnPropertySelectedListener, OnSearchListener {
 	
 	private DataListFragment mDataListFragment;
+	private SlidingMenu mSearchMenu;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,14 @@ public class MainActivity extends FragmentActivity implements OnPropertySelected
 		if(findViewById(R.id.main_fragment_container) == null) 
 			getActionBar().setDisplayShowTitleEnabled(false);
 		mDataListFragment = new DataListFragment();
+		// configure the SlidingMenu
+		mSearchMenu = new SlidingMenu(this);
+		mSearchMenu.setMode(SlidingMenu.LEFT);
+		mSearchMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+		mSearchMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+		mSearchMenu.setFadeDegree(0.35f);
+		mSearchMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+		mSearchMenu.setMenu(R.layout.layout_search_container);
 	}
 
 	@Override
@@ -43,6 +56,9 @@ public class MainActivity extends FragmentActivity implements OnPropertySelected
 		switch (item.getItemId()) {
 		case R.id.menu_agent_login:
 			startActivity(new Intent(this, AgentActivity.class));
+			break;
+		case R.id.menu_search_property:
+			mSearchMenu.toggle();
 			break;
 		}
 		return true;
@@ -82,5 +98,18 @@ public class MainActivity extends FragmentActivity implements OnPropertySelected
 	            .replace(R.id.property_details_fragment_container, mFragment)
 	            .commit();
 		}
+	}
+
+	@Override
+	public void onSearchClicked(String query) {
+		mSearchMenu.toggle();
+		mDataListFragment.getSearchResults(query);
+		Log.i(getClass().getName(), query);
+	}
+
+	@Override
+	public void onSearchAllClicked() {
+		mSearchMenu.toggle();
+		mDataListFragment.getSearchResults(PropertyListLoader.GET_ALL);
 	}
 }

@@ -106,14 +106,6 @@
                 android:textSize="16sp"
                 android:textStyle="italic" />
 
-            <TextView
-                android:id="@+id/property_details_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textColor="@color/body_text_color"
-                android:textSize="12sp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,66 +116,22 @@
 
                 <TextView
                     android:id="@+id/property_detials_bedroom_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/ic_bedroom"
-                    android:fontFamily="sans-serif-condensed"
-                    android:gravity="center_vertical"
-                    android:singleLine="true"
-                    android:text="@string/not_available"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textStyle="bold" />
+                    style="@style/DetailsRoomCountText"
+                    android:drawableLeft="@drawable/ic_bedroom"/>
 
                 <TextView
                     android:id="@+id/property_detials_bathroom_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/ic_bathroom"
-                    android:fontFamily="sans-serif-condensed"
-                    android:gravity="center_vertical"
-                    android:singleLine="true"
-                    android:text="@string/not_available"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textStyle="bold" />
+                    style="@style/DetailsRoomCountText"
+                    android:drawableLeft="@drawable/ic_bathroom" />
             </LinearLayout>
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/property_details_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:divider="?android:dividerVertical"
-                android:dividerPadding="2dp"
-                android:orientation="horizontal"
-                android:showDividers="middle" >
-
-                <TextView
-                    android:id="@+id/property_detials_hall_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/ic_hall"
-                    android:fontFamily="sans-serif-condensed"
-                    android:gravity="center_vertical"
-                    android:singleLine="true"
-                    android:text="@string/not_available"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/property_detials_kitchen_count"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/ic_kitchen"
-                    android:fontFamily="sans-serif-condensed"
-                    android:gravity="center_vertical"
-                    android:singleLine="true"
-                    android:text="@string/not_available"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                android:padding="5dp"
+                android:textColor="@color/body_text_color"
+                android:textSize="12sp" />
         </LinearLayout>
     </ScrollView>
 

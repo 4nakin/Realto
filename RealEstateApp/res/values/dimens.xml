@@ -7,4 +7,6 @@
     <dimen name="list_price_text_size">12sp</dimen>
     <dimen name="list_name_text_size">16sp</dimen>
     <dimen name="list_address_text_size">12sp</dimen>
+    <dimen name="slidingmenu_offset">20dp</dimen>
+    <dimen name="shadow_width">8dp</dimen>
 </resources>

@@ -21,6 +21,7 @@ public class DataListFragment extends ListFragment implements LoaderCallbacks<Ar
 	private final int LOADER_ID = 123;
 	private ItemListAdapter mAdapter;
 	private OnPropertySelectedListener mCallback;
+	private String mUserQuery = PropertyListLoader.GET_ALL;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class DataListFragment extends ListFragment implements LoaderCallbacks<Ar
 		setListShown(false);
 		getLoaderManager().initLoader(LOADER_ID, null, this).forceLoad();
 	}
-	
+		
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
@@ -41,6 +42,11 @@ public class DataListFragment extends ListFragment implements LoaderCallbacks<Ar
 			throw new ClassCastException(activity.toString()
 					+ " must implement OnHeadlineSelectedListener");
 		}
+	}
+	
+	public void getSearchResults(String query) {
+		mUserQuery = query;
+		getLoaderManager().initLoader(LOADER_ID, null, this).forceLoad();
 	}
 
 	@Override
@@ -52,7 +58,7 @@ public class DataListFragment extends ListFragment implements LoaderCallbacks<Ar
 	@Override
 	public Loader<ArrayList<PropertyDetailsObject>> onCreateLoader(int arg0,
 			Bundle arg1) {
-		return new PropertyListLoader(getActivity());
+		return new PropertyListLoader(getActivity(), mUserQuery);
 	}
 
 	@Override

@@ -7,5 +7,7 @@
     <dimen name="property_details_image_height">200dp</dimen>
     <dimen name="list_price_text_size">14sp</dimen>
     <dimen name="list_name_text_size">18sp</dimen>
-    <dimen name="list_address_text_size">14sp</dimen>    
+    <dimen name="list_address_text_size">14sp</dimen>   
+    <dimen name="slidingmenu_offset">200dp</dimen>
+    <dimen name="shadow_width">8dp</dimen> 
 </resources>

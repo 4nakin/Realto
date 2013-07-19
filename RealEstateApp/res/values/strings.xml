@@ -26,6 +26,7 @@
     <string name="select_location">Address</string>
     <string name="description">Enter Description</string>
     <string name="upload">Upload</string>
+    <string name="uploading">Uploading</string>
     <string name="discard">Discard</string>
     <string name="discard_entry">Discard Entry?</string>
     <string name="add_image">+</string>
@@ -36,6 +37,12 @@
     <string name="gallery_image">Gallery Image</string>
     <string name="not_available">NA</string>
     <string name="authenticating">Authenticating</string>
+    <string name="search">Search</string>
+    <string name="enter_location">Enter Location</string>
+    <string name="show_all">Show All</string>
+    <string name="or">OR</string>
+    <string name="bedroom">Bedroom(s)</string>
+    <string name="bathroom">Bathroom(s)</string>
     
     <string name="error_login_failed">Loging failed. Please try again.</string>
     <string name="error_login_worng_credintials">Loging failed because of wrong usernmae or password.</string>
@@ -58,40 +65,48 @@
         <item>3 Bedrooms</item>
         <item>4 Bedrooms</item>
         <item>5 Bedrooms</item>
-        <item>6 Bedrooms</item>
-        <item>7 Bedrooms</item>
-        <item>8 Bedrooms</item>
-        <item>9 Bedrooms</item>
-        <item>10 Bedrooms</item>
+    </string-array>
+    
+    <string-array name="search_bedroom_count">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
     
     <string-array name="bathroom_count">
         <item>1 Bathroom</item>
+        <item>1.5 Bathrooms</item>
         <item>2 Bathrooms</item>
+        <item>2.5 Bathrooms</item>
         <item>3 Bathrooms</item>
+        <item>3.5 Bathrooms</item>
         <item>4 Bathrooms</item>
+        <item>4.5 Bathrooms</item>
         <item>5 Bathrooms</item>
-        <item>6 Bathrooms</item>
-        <item>7 Bathrooms</item>
-        <item>8 Bathrooms</item>
-        <item>9 Bathrooms</item>
-        <item>10 Bathrooms</item>
+        <item>5.5 Bathrooms</item>
     </string-array>
     
-    <string-array name="hall_count">
-        <item>No hall</item>
-        <item>1 Hall</item>
-        <item>2 Halls</item>
-        <item>3 Halls</item>
-        <item>4 Halls</item>
-        <item>5 Halls</item>
+    <string-array name="search_bathroom_count">
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>2.5</item>
+        <item>3</item>
+        <item>3.5</item>
+        <item>4</item>
+        <item>4.5</item>
+        <item>5</item>
+        <item>5.5</item>
     </string-array>
     
-    <string-array name="kitchen_count">
-        <item>1 Kitchen</item>
-        <item>2 Kitchens</item>
-        <item>3 Kitchens</item>
-        <item>4 Kitchens</item>
-        <item>5 Kitchens</item>
+    <string-array name="other_rooms">
+        <item>Kitchen</item>
+        <item>Living Room</item>
+        <item>Covered Car Garage</item>
+        <item>Swimming Pool</item>
+        <item>Attic</item>
+        <item>Basement</item>
     </string-array>
 </resources>
