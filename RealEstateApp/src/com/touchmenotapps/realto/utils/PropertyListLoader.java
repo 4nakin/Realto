@@ -27,7 +27,7 @@ public class PropertyListLoader extends AsyncTaskLoader<ArrayList<PropertyDetail
 
 	public static final String GET_ALL = "ALL";
 	private final String URL = "http://appztiger.com/demo/wordpress/property_list.php";
-	private final String FILTER_URL = "";
+	private final String FILTER_URL = "http://appztiger.com/demo/wordpress/search.php";
 	private NetworkUtil mNetworkUtil;
 	private Context mContext;
 	private String query;
@@ -42,20 +42,22 @@ public class PropertyListLoader extends AsyncTaskLoader<ArrayList<PropertyDetail
 		this.query = query;
 		mNetworkUtil = new NetworkUtil();
 		mContext = context;
-		
+		/** Init the sax parser **/
+		factory = SAXParserFactory.newInstance();
+        try {
+			parser = factory.newSAXParser();
+			xmlreader = parser.getXMLReader();
+	        mResponseHandler=new ServerResponseHandler();
+	        xmlreader.setContentHandler(mResponseHandler);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}         
 	}
 
 	@Override
 	public ArrayList<PropertyDetailsObject> loadInBackground() {
 		if(mNetworkUtil.isNetworkAvailable(mContext)) {
 			try {
-				/** Init the sax parser **/
-				factory = SAXParserFactory.newInstance();
-                parser = factory.newSAXParser();
-                xmlreader = parser.getXMLReader();
-                mResponseHandler=new ServerResponseHandler();
-                xmlreader.setContentHandler(mResponseHandler);
-                /** Make the requests **/
 				if(query.equals(GET_ALL)) {
 					URL url= new URL(URL);  
 					is = new InputSource(url.openStream());

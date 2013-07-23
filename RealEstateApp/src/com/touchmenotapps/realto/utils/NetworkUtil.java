@@ -2,6 +2,7 @@ package com.touchmenotapps.realto.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -15,6 +16,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.provider.Settings;
 import android.util.Base64;
+import android.util.Log;
 
 /**
  * 
@@ -102,4 +104,22 @@ public class NetworkUtil {
 	    is.close();
 	    return Base64.encodeToString(bytes, Base64.DEFAULT);
 	}
+	
+	/**
+	 * 
+	 * @param path
+	 * @param value
+	 */
+	public void createFile(String path, String value){
+		Log.i("Test", "Path : " + path);
+        FileWriter fWriter;
+        try{
+             fWriter = new FileWriter(path);
+             fWriter.write(value);
+             fWriter.flush();
+             fWriter.close();
+         }catch(Exception e){
+                  e.printStackTrace();
+         }
+    }
 }

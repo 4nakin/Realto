@@ -226,7 +226,7 @@ public class AgentUploadFragment extends Fragment implements DataUploadListener 
 				"<price>" + mPropertyPrice.getText().toString().trim() + "</price>" + 
 				"<description>" + mPropertyDescription.getText().toString().trim() + "</description>"+
 				"<contact> dummy@dummy.com </contact>"+
-				"<rooms>" + rooms + " </rooms>" + 
+				"<rooms>" + rooms + "</rooms>" + 
 				"<images>" + images + "</images>";
 		Log.i(getClass().getName(), response);
 		return response;
