@@ -43,17 +43,25 @@ public class ItemListAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
-		TextView mTitle, mAddress, mPrice;
+		final ViewHolder holder;
 		if (convertView == null) {
 			/** Initialize the adapter widgets **/
 			convertView = inflater.inflate(R.layout.adapter_item_list, null);
-			mTitle = (TextView) convertView.findViewById(R.id.list_header_text);
-			mAddress = (TextView) convertView.findViewById(R.id.list_sub_header_text);
-			mPrice = (TextView) convertView.findViewById(R.id.list_price_text);
-			mTitle.setText(mData.get(position).getPropertyTitle());
-			mAddress.setText(mData.get(position).getPropertyAddress());
-			mPrice.setText(mData.get(position).getPropertyPrice() + " " + mData.get(position).getCurrency());
-		} 
+			holder = new ViewHolder();
+			holder.mTitle = (TextView) convertView.findViewById(R.id.list_header_text);
+			holder.mAddress = (TextView) convertView.findViewById(R.id.list_sub_header_text);
+			holder.mPrice = (TextView) convertView.findViewById(R.id.list_price_text);
+			convertView.setTag(holder);
+		} else {
+			holder = (ViewHolder) convertView.getTag();
+		}
+		holder.mTitle.setText(mData.get(position).getPropertyTitle());
+		holder.mAddress.setText(mData.get(position).getPropertyAddress());
+		holder.mPrice.setText(mData.get(position).getPropertyPrice() + " " + mData.get(position).getCurrency());
 		return convertView;
+	}
+	
+	static class ViewHolder {
+		TextView mTitle, mAddress, mPrice;
 	}
 }

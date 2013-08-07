@@ -1,17 +1,19 @@
 package com.touchmenotapps.realto;
 
+import java.util.ArrayList;
+
+import org.apache.http.NameValuePair;
+
 import com.touchmenotapps.realto.fragments.DataListFragment;
 import com.touchmenotapps.realto.fragments.PropertyDetailsFragment;
 import com.touchmenotapps.realto.interfaces.OnPropertySelectedListener;
 import com.touchmenotapps.realto.interfaces.OnSearchListener;
 import com.touchmenotapps.realto.model.PropertyDetailsObject;
 import com.touchmenotapps.realto.slidingmenu.lib.SlidingMenu;
-import com.touchmenotapps.realto.utils.PropertyListLoader;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -101,15 +103,14 @@ public class MainActivity extends FragmentActivity implements OnPropertySelected
 	}
 
 	@Override
-	public void onSearchClicked(String query) {
+	public void onSearchClicked(ArrayList<NameValuePair> data) {
 		mSearchMenu.toggle();
-		mDataListFragment.getSearchResults(query);
-		Log.i(getClass().getName(), query);
+		mDataListFragment.getSearchResults(data);
 	}
 
 	@Override
 	public void onSearchAllClicked() {
 		mSearchMenu.toggle();
-		mDataListFragment.getSearchResults(PropertyListLoader.GET_ALL);
+		mDataListFragment.getSearchResults(null);
 	}
 }

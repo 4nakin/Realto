@@ -141,7 +141,7 @@ public class PropertyDetailsFragment extends Fragment{
 				public void onImageDownloadCompleted(Drawable drawable) {
 					mImageButton.setImageDrawable(drawable);
 				}
-			});
+			}).execute(mPropertyDetails.getPropertyImagesURL());
 		}
 	}
 		

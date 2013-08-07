@@ -2,6 +2,8 @@ package com.touchmenotapps.realto.fragments;
 
 import java.util.ArrayList;
 
+import org.apache.http.NameValuePair;
+
 import com.touchmenotapps.realto.R;
 import com.touchmenotapps.realto.adapter.ItemListAdapter;
 import com.touchmenotapps.realto.interfaces.OnPropertySelectedListener;
@@ -12,6 +14,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
+import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.view.View;
 import android.widget.ListView;
@@ -21,7 +24,7 @@ public class DataListFragment extends ListFragment implements LoaderCallbacks<Ar
 	private final int LOADER_ID = 123;
 	private ItemListAdapter mAdapter;
 	private OnPropertySelectedListener mCallback;
-	private String mUserQuery = PropertyListLoader.GET_ALL;
+	private ArrayList<NameValuePair> mUserQuery = null;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -44,9 +47,10 @@ public class DataListFragment extends ListFragment implements LoaderCallbacks<Ar
 		}
 	}
 	
-	public void getSearchResults(String query) {
-		mUserQuery = query;
-		getLoaderManager().initLoader(LOADER_ID, null, this).forceLoad();
+	public void getSearchResults(ArrayList<NameValuePair> data) {
+		mUserQuery = data;
+		setListShown(false);
+		getLoaderManager().restartLoader(LOADER_ID, null, this);
 	}
 
 	@Override
@@ -58,7 +62,9 @@ public class DataListFragment extends ListFragment implements LoaderCallbacks<Ar
 	@Override
 	public Loader<ArrayList<PropertyDetailsObject>> onCreateLoader(int arg0,
 			Bundle arg1) {
-		return new PropertyListLoader(getActivity(), mUserQuery);
+		AsyncTaskLoader<ArrayList<PropertyDetailsObject>> loader = new PropertyListLoader(getActivity(), mUserQuery);
+		loader.forceLoad();
+		return loader;
 	}
 
 	@Override

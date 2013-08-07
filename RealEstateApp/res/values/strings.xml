@@ -106,7 +106,7 @@
         <item>Living Room</item>
         <item>Covered Car Garage</item>
         <item>Swimming Pool</item>
-        <item>Attic</item>
         <item>Basement</item>
+        <item>Attic</item>
     </string-array>
 </resources>

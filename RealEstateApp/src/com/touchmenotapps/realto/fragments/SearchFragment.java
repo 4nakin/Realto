@@ -2,6 +2,9 @@ package com.touchmenotapps.realto.fragments;
 
 import java.util.ArrayList;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
 import com.touchmenotapps.realto.R;
 import com.touchmenotapps.realto.interfaces.OnSearchListener;
 
@@ -88,23 +91,18 @@ public class SearchFragment extends Fragment{
 		}
 	}
 	
-	private String formQuery() {
-		String otherRooms = "";
-		for(CheckBox mRoom : mRoomButtons) {
-			if(mRoom.isChecked())
-				otherRooms = otherRooms + "<" +  mRoom.getText().toString().replaceAll("\\s", "").toLowerCase() + 
-				">" + 1 + "</"+  mRoom.getText().toString().replaceAll("\\s", "").toLowerCase() + ">";
-			else
-				otherRooms = otherRooms + "<" +  mRoom.getText().toString().replaceAll("\\s", "").toLowerCase() + 
-				">" + 0 + "</"+  mRoom.getText().toString().replaceAll("\\s", "").toLowerCase() + ">";
-		}
-		
-		String request = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
-				"<request>" +
-				"<location>" + mLocation.getText().toString() + "</location>" +
-				"<bedroom>" + mBedrooms.getSelectedItem().toString() + "</bedroom>" +
-				"<bathroom>" + mBathrooms.getSelectedItem().toString() + "</bathroom>" +
-				otherRooms + "</request>";
-		return request;
+	private ArrayList<NameValuePair> formQuery() {
+		ArrayList<NameValuePair> data = new ArrayList<NameValuePair>();
+		/** Add the list of items to be posted **/
+		data.add(new BasicNameValuePair("bedroom", mBedrooms.getSelectedItem().toString()));
+		data.add(new BasicNameValuePair("bathroom", mBathrooms.getSelectedItem().toString()));
+		data.add(new BasicNameValuePair("location", mLocation.getText().toString()));
+		data.add(new BasicNameValuePair("kitchen", mRoomButtons.get(0).isChecked() ? "1" : "0"));
+		data.add(new BasicNameValuePair("living-room", mRoomButtons.get(1).isChecked() ? "1" : "0"));
+		data.add(new BasicNameValuePair("covered-car-garage", mRoomButtons.get(2).isChecked() ? "1" : "0"));
+		data.add(new BasicNameValuePair("swimming-pool", mRoomButtons.get(3).isChecked() ? "1" : "0"));
+		data.add(new BasicNameValuePair("attic", mRoomButtons.get(5).isChecked() ? "1" : "0"));
+		data.add(new BasicNameValuePair("basement", mRoomButtons.get(4).isChecked() ? "1" : "0"));
+		return data;
 	}
 }

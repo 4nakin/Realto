@@ -8,11 +8,11 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
@@ -25,21 +25,20 @@ import com.touchmenotapps.realto.model.PropertyDetailsObject;
 
 public class PropertyListLoader extends AsyncTaskLoader<ArrayList<PropertyDetailsObject>> {
 
-	public static final String GET_ALL = "ALL";
 	private final String URL = "http://appztiger.com/demo/wordpress/property_list.php";
 	private final String FILTER_URL = "http://appztiger.com/demo/wordpress/search.php";
 	private NetworkUtil mNetworkUtil;
 	private Context mContext;
-	private String query;
+	private ArrayList<NameValuePair> mData = null;
 	private SAXParserFactory factory;
 	private SAXParser parser;
 	private XMLReader xmlreader;
 	private ServerResponseHandler mResponseHandler;
 	private InputSource is;
 	
-	public PropertyListLoader(Context context, String query) {
+	public PropertyListLoader(Context context, ArrayList<NameValuePair> data) {
 		super(context);
-		this.query = query;
+		this.mData = data;
 		mNetworkUtil = new NetworkUtil();
 		mContext = context;
 		/** Init the sax parser **/
@@ -58,20 +57,17 @@ public class PropertyListLoader extends AsyncTaskLoader<ArrayList<PropertyDetail
 	public ArrayList<PropertyDetailsObject> loadInBackground() {
 		if(mNetworkUtil.isNetworkAvailable(mContext)) {
 			try {
-				if(query.equals(GET_ALL)) {
+				if(mData == null) {
+					Log.i("Test", "Show All");
 					URL url= new URL(URL);  
 					is = new InputSource(url.openStream());
 				} else {
-					HttpPost httpPost = new HttpPost(FILTER_URL);
-				    StringEntity entity;
-				    String response_string = null;
-					entity = new StringEntity(query, HTTP.UTF_8);
-			        httpPost.setHeader("Content-Type","text/xml;charset=UTF-8");
-			        httpPost.setEntity(entity);
-			        HttpClient client = new DefaultHttpClient();
-			        HttpResponse response = client.execute(httpPost);
-			        response_string = EntityUtils.toString(response.getEntity());
-			        Log.i(getClass().getName(), response_string);
+					HttpClient httpclient = new DefaultHttpClient();
+			        HttpPost httppost = new HttpPost(FILTER_URL);		        
+			        httppost.setEntity(new UrlEncodedFormEntity(mData));
+			        HttpResponse response = httpclient.execute(httppost);
+			        String response_string = EntityUtils.toString(response.getEntity());
+			        Log.i("postData", response_string);
 			        is = new InputSource(new StringReader(response_string));
 				}
                 xmlreader.parse(is);

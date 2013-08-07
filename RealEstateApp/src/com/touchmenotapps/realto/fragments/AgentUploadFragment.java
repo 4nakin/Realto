@@ -1,14 +1,12 @@
 package com.touchmenotapps.realto.fragments;
 
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 import com.touchmenotapps.realto.R;
 import com.touchmenotapps.realto.interfaces.DataUploadListener;
-import com.touchmenotapps.realto.utils.NetworkUtil;
 import com.touchmenotapps.realto.utils.UploadFormData;
 
 import android.annotation.SuppressLint;
@@ -24,7 +22,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -54,12 +51,10 @@ public class AgentUploadFragment extends Fragment implements DataUploadListener 
 	private File mImageFile;
 	private ArrayList<String> mImagePaths = new ArrayList<String>();
 	private ArrayList<CheckBox> mRoomButtons = new ArrayList<CheckBox>();
-	private NetworkUtil mNetworkUtil;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		mNetworkUtil = new NetworkUtil();
 		mViewHolder = inflater.inflate(R.layout.fragment_agent_upload, null);
 		
 		mPropertyName = (EditText) mViewHolder.findViewById(R.id.upload_property_name);
@@ -95,7 +90,7 @@ public class AgentUploadFragment extends Fragment implements DataUploadListener 
 		mViewHolder.findViewById(R.id.upload_start_btn).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				new UploadFormData(getActivity(), AgentUploadFragment.this).execute(new String[] { setServerResponse() });
+				new UploadFormData(getActivity(), AgentUploadFragment.this).execute(setServerResponse());
 			}
 		});
 
@@ -196,40 +191,25 @@ public class AgentUploadFragment extends Fragment implements DataUploadListener 
 		clearAllFields();
 	}
 	
-	private String setServerResponse() {
-		/** Add the list of rooms **/
-		String rooms = "<bedroom>" + mBedroomSpinner.getSelectedItem().toString() + "</bedroom>" + 
-				"<bathroom>" + mBathroomSpinner.getSelectedItem().toString() + "</bathroom>";
+	private String[] setServerResponse() {		
+		/** The main response string body **/
+		ArrayList<String> mUploadParams = new ArrayList<String>();
+		mUploadParams.add(mPropertyName.getText().toString().trim());
+		mUploadParams.add(mPropertyLocation.getText().toString().trim() );
+		mUploadParams.add(mPropertyPrice.getText().toString().trim());
+		mUploadParams.add(mPropertyDescription.getText().toString().trim());
+		mUploadParams.add(mBedroomSpinner.getSelectedItem().toString());
+		mUploadParams.add(mBathroomSpinner.getSelectedItem().toString());
 		for(CheckBox mRoom : mRoomButtons) {
 			if(mRoom.isChecked())
-				rooms = rooms + "<" +  mRoom.getText().toString().replaceAll("\\s", "").toLowerCase() + 
-				">" + 1 + "</"+  mRoom.getText().toString().replaceAll("\\s", "").toLowerCase() + ">";
+				mUploadParams.add(String.valueOf(1));
 			else
-				rooms = rooms + "<" +  mRoom.getText().toString().replaceAll("\\s", "").toLowerCase() + 
-				">" + 0 + "</"+  mRoom.getText().toString().replaceAll("\\s", "").toLowerCase() + ">";
+				mUploadParams.add(String.valueOf(0));
 		}
-		/** Add the list of images **/
-		String images = "";
-		if(mImagePaths.size() > 0) {
-			for(String path : mImagePaths) {
-				try {
-					images = images + "<image>" + mNetworkUtil.getEncodedBase64StringFromFile(new File(path)) + "</image>";
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		/** The main response string body **/
-		String response = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + 
-				"<title>" + mPropertyName.getText().toString().trim() + "</title>" +
-				"<address>"+ mPropertyLocation.getText().toString().trim() + "</address>" +
-				"<price>" + mPropertyPrice.getText().toString().trim() + "</price>" + 
-				"<description>" + mPropertyDescription.getText().toString().trim() + "</description>"+
-				"<contact> dummy@dummy.com </contact>"+
-				"<rooms>" + rooms + "</rooms>" + 
-				"<images>" + images + "</images>";
-		Log.i(getClass().getName(), response);
-		return response;
+		if(mImagePaths.size() > 0) 
+			for(String path : mImagePaths) 
+				mUploadParams.add(path);		
+		return mUploadParams.toArray(new String[mUploadParams.size()]);
 	}
 
 	public void setOtherRoomOptions() {
